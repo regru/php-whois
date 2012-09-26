@@ -1,4 +1,4 @@
-<?
+<?php
 
 include('whois.class.php');
 
@@ -15,4 +15,3 @@ if ($domain->is_available()) {
     echo "Domain is registered\n";
 }
 
-?>

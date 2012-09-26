@@ -1,4 +1,5 @@
-<?
+<?php
+
 class whois {
     var $domain;
     var $tldname;
@@ -148,4 +149,4 @@ class whois {
         return false;
     }
 }
-?>
+
