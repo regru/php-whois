@@ -79,20 +79,20 @@ class whois {
                     $string = '';
 
                     while (!feof($fp)) {
-                            $string .= fgets($fp, 128);
+                        $string .= fgets($fp, 128);
                     }
 
                     // Checking for other tld's
                 } else {
                     while (!feof($fp)) {
-                            $string .= fgets($fp, 128);
+                        $string .= fgets($fp, 128);
                     }
                 }
                 fclose($fp);
 
                 return htmlspecialchars($string);
             } else {
-                    return "No whois server for this tld in list!";
+                return "No whois server for this tld in list!";
             }
         } else {
             return "Domainname isn't valid!";
@@ -127,7 +127,7 @@ class whois {
         $whois_string = $this->info();
         $not_found_string = '';
         if (isset($this->servers[$this->tldname][1])) {
-	    $not_found_string = $this->servers[$this->tldname][1];
+           $not_found_string = $this->servers[$this->tldname][1];
         }
 
         $whois_string2 = @ereg_replace($this->domain, '', $whois_string);
@@ -150,13 +150,18 @@ class whois {
     }
 
     function is_valid() {
-        if (isset($this->servers[$this->tldname][0]) && strlen($this->servers[$this->tldname][0]) > 6) {
-	    $tmp_domain = strtolower($this->domainname);
-	    if (ereg("^[a-z0-9\-]{3,}$", $tmp_domain) && !ereg("^-|-$", $tmp_domain) && !preg_match("/--/", $tmp_domain)) {
+        if (
+            isset($this->servers[$this->tldname][0]) 
+            && strlen($this->servers[$this->tldname][0]) > 6
+        ) {
+            $tmp_domain = strtolower($this->domainname);
+            if (
+                ereg("^[a-z0-9\-]{3,}$", $tmp_domain) 
+                && !ereg("^-|-$", $tmp_domain) && !preg_match("/--/", $tmp_domain)
+            ) {
                 return true;
             }
         }
         return false;
     }
 }
-
