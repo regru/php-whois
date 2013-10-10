@@ -23,7 +23,8 @@ class whois {
         'mn' => array('whois.nic.mn', 'Domain not found'),
         'cc' => array('whois.nic.cc', 'No match'),
         'ws' => array('whois.worldsite.ws', 'No match for'),
-        'asia' => array('whois.nic.asia', 'NOT FOUND')
+        'asia' => array('whois.nic.asia', 'NOT FOUND'),
+	'ir' => array('whois.nic.ir', 'NOT FOUND')
         //.bz
     );
 
