@@ -6,7 +6,7 @@ class whois {
     var $domainname;
 
     var $servers = array(
-        'ru' => array('whois.ripn.ru', 'No entries found'),
+        'ru' => array('whois.ripn.net', 'No entries found'),
         'su' => array('whois.ripn.net', 'No entries found'),
         'com' => array('whois.crsnic.net', 'No match'),
         'net' => array('whois.crsnic.net', 'No match'),
