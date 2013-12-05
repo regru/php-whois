@@ -5,34 +5,14 @@ class whois {
     var $tldname;
     var $domainname;
 
-    var $servers = array(
-        'ru' => array('whois.ripn.net', 'No entries found'),
-        'su' => array('whois.ripn.net', 'No entries found'),
-        'com' => array('whois.crsnic.net', 'No match'),
-        'net' => array('whois.crsnic.net', 'No match'),
-        'org' => array('whois.pir.org', 'NOT FOUND'),
-        'biz' => array('whois.biz', 'Not found'),
-        'info' => array('whois.afilias.info', 'Not found'),
-        'mobi' => array('whois.dotmobiregistry.net', 'NOT FOUND'),
-        'name' => array('whois.nic.name', 'No match'),
-        'tv' => array('whois.nic.tv', 'No match'),
-        'cn' => array('whois.cnnic.net.cn', 'No entries found'),
-        //.vn
-        'tw' => array('whois.twnic.net', 'NO MATCH TIP'),
-        'in' => array('whois.inregistry.in', 'NOT FOUND'),
-        'mn' => array('whois.nic.mn', 'Domain not found'),
-        'cc' => array('whois.nic.cc', 'No match'),
-        'ws' => array('whois.worldsite.ws', 'No match for'),
-        'asia' => array('whois.nic.asia', 'NOT FOUND'),
-        'ir' => array('whois.nic.ir', 'no entries found')
-        //.bz
-    );
-
+    var $servers;
 
     function whois ($domain_name) {
         $this->domain = $domain_name;
         $this->get_tld();
         $this->get_domain();
+        // setup whois servers array from json file
+        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ),TRUE);
     }
 
     function info() {
@@ -41,55 +21,81 @@ class whois {
 
             // If tldname have been found
             if ($whois_server != '') {
-                // Getting whois information
-                $fp = fsockopen($whois_server, 43);
-                if (!$fp) {
-                    return "Connection error!";
-                }
+				
+				// if whois server serve replay over HTTP protocol instead of WHOIS protocol
+				if(preg_match("/^http:\/\//i", $whois_server)){
+				
+					// curl session to get whois reposnse
+					$ch = curl_init();
+					$url = $whois_server . $this->domainname . '.' . $this->tldname;
+					curl_setopt($ch, CURLOPT_URL, $url);
+					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
+					curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+					curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+					curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+					
+					$data = curl_exec($ch);
 
-                $dom = $this->domainname . '.' . $this->tldname;
-                fputs($fp, "$dom\r\n");
+					if (curl_error($ch)){
+						return "Connection error!";
+					}else {
+						$string = strip_tags($data);
+					}
+					curl_close($ch);
 
-                // Getting string
-                $string = '';
+				}else{
+					
+					// Getting whois information
+					$fp = fsockopen($whois_server, 43);
+					if (!$fp) {
+						return "Connection error!";
+					}
 
-                // Checking whois server for .com and .net
-                if ($this->tldname == 'com' || $this->tldname == 'net') {
-                    while (!feof($fp)) {
-                        $line = trim(fgets($fp, 128));
+					$dom = $this->domainname . '.' . $this->tldname;
+					fputs($fp, "$dom\r\n");
 
-                        $string .= $line;
+					// Getting string
+					$string = '';
 
-                        $lineArr = split(":", $line);
+					// Checking whois server for .com and .net
+					if ($this->tldname == 'com' || $this->tldname == 'net') {
+						while (!feof($fp)) {
+							$line = trim(fgets($fp, 128));
 
-                        if (strtolower($lineArr[0]) == 'whois server') {
-                            $whois_server = trim($lineArr[1]);
-                        }
-                    }
-                    // Getting whois information
-                    $fp = fsockopen($whois_server, 43);
-                    if (!$fp) {
-                        return "Connection error!";
-                    }
+							$string .= $line;
+
+							$lineArr = split(":", $line);
+
+							if (strtolower($lineArr[0]) == 'whois server') {
+								$whois_server = trim($lineArr[1]);
+							}
+						}
+						// Getting whois information
+						$fp = fsockopen($whois_server, 43);
+						if (!$fp) {
+							return "Connection error!";
+						}
 
 
-                    $dom = $this->domainname . '.' . $this->tldname;
-                    fputs($fp, "$dom\r\n");
+						$dom = $this->domainname . '.' . $this->tldname;
+						fputs($fp, "$dom\r\n");
 
-                    // Getting string
-                    $string = '';
+						// Getting string
+						$string = '';
 
-                    while (!feof($fp)) {
-                        $string .= fgets($fp, 128);
-                    }
+						while (!feof($fp)) {
+							$string .= fgets($fp, 128);
+						}
 
-                    // Checking for other tld's
-                } else {
-                    while (!feof($fp)) {
-                        $string .= fgets($fp, 128);
-                    }
-                }
-                fclose($fp);
+						// Checking for other tld's
+					} else {
+						while (!feof($fp)) {
+							$string .= fgets($fp, 128);
+						}
+					}
+					fclose($fp);
+				}
 
                 return htmlspecialchars($string);
             } else {
