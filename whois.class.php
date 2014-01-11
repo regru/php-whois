@@ -23,7 +23,7 @@ class whois {
             if ($whois_server != '') {
 				
 				// if whois server serve replay over HTTP protocol instead of WHOIS protocol
-				if(preg_match("/^http:\/\//i", $whois_server)){
+				if(preg_match("/^https?:\/\//i", $whois_server)){
 				
 					// curl session to get whois reposnse
 					$ch = curl_init();
