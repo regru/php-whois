@@ -169,7 +169,7 @@
     ],
     "be": [
         "whois.dns.be",
-        "Status:\tAVAILABLE"
+        "Status:    AVAILABLE"
     ],
     "ac.be": [
         "whois.dns.be",
@@ -505,14 +505,14 @@
     ],
     "de": [
         "whois.denic.de",
-        "free"
+        "Status: free"
     ],
     "dk": [
         "whois.dk-hostmaster.dk",
         "No entries found"
     ],
     "fo": [
-        "whois.ripe.net",
+        "whois.nic.fo",
         "no entries found"
     ],
     "com.ec": [
@@ -688,7 +688,7 @@
         "do not have an entry in our database matching your query"
     ],
     "lt": [
-        "whois.ripe.net",
+        "whois.domreg.lt",
         "Status:\t\t\tavailable"
     ],
     "lu": [
@@ -765,7 +765,7 @@
     ],
     "nu": [
         "whois.nic.nu",
-        "NO MATCH for"
+        "not found"
     ],
     "pl": [
         "whois.dns.pl",
@@ -1096,7 +1096,7 @@
         "No information available"
     ],
     "co.za": [
-        "http:\/\/co.za\/cgi-bin\/whois.sh?Domain=",
+        "http:\/\/whois.registry.net.za\/whois\/whois.sh?Domain=",
         "No Matches"
     ],
     "edu.za": [
@@ -1224,8 +1224,8 @@
         "no entries found"
     ],
     "lv": [
-        "whois.ripe.net",
-        ""
+        "whois.nic.lv",
+        "Status: free"
     ],
     "eu.lv": [
         "whois.biz",
@@ -1236,11 +1236,11 @@
         "NOT FOUND"
     ],
     "es": [
-        "https:\/\/www.realtimeregister.com\/page\/whois_check.php?domein=",
-        "es available"
+        "http:\/\/whois.virtualname.es\/whois.php?domain=",
+        "LIBRE"
     ],
     "jp": [
-        "whois.nic.ad.jp",
+        "whois.jprs.jp",
         "No match!!"
     ],
     "cl": [
@@ -1257,7 +1257,7 @@
     ],
     "eu": [
         "whois.eu",
-        "Status:\tAVAILABLE"
+        "Status:    AVAILABLE"
     ],
     "co.nz": [
         "whois.srs.net.nz",
@@ -1283,9 +1283,25 @@
         "whois.srs.net.nz",
         "220 Available"
     ],
+    "kiwi.nz": [
+        "whois.srs.net.nz",
+        "220 Available"
+    ],
+    "geek.nz": [
+        "whois.srs.net.nz",
+        "220 Available"
+    ],
+    "gen.nz": [
+        "whois.srs.net.nz",
+        "220 Available"
+    ],
+    "school.nz": [
+        "whois.srs.net.nz",
+        "220 Available"
+    ],
     "io": [
         "whois.nic.io",
-        "Available"
+        "is available"
     ],
     "la": [
         "whois.nic.la",
@@ -1608,8 +1624,8 @@
         "Not Registered"
     ],
     "gd": [
-        "whois.adamsnames.tc",
-        "Available"
+        "whois.nic.gd",
+        "not found..."
     ],
     "rs": [
         "whois.rnids.rs",
@@ -1639,8 +1655,88 @@
         "whois.nic.pw",
         "DOMAIN NOT FOUND"
     ],
+    "cat": [
+        "whois.cat",
+        "NOT FOUND"
+    ],
+    "mil.id": [
+        "whois.idnic.net.id",
+        "Not found"
+    ],
+    "go.id": [
+        "whois.idnic.net.id",
+        "Not found"
+    ],
+    "fm": [
+        "whois.nic.fm",
+        "Not Registered"
+    ],
+    "mn": [
+        "whois.afilias-grs.info",
+        "NOT FOUND"
+    ],
+    "sx": [
+        "whois.sx",
+        "Status: AVAILABLE"
+    ],
     "bg": [
         "whois.register.bg",
         "does not exist in database"
+    ],
+    "bike": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "clothing": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "guru": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "holdings": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "plumbing": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "singles": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "ventures": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "camera": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "equipment": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "estate": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "gallery": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "graphics": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "lighting": [
+        "whois.donuts.co",
+        "Domain not found"
+    ],
+    "photography": [
+        "whois.donuts.co",
+        "Domain not found"
     ]
 }
