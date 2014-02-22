@@ -65,7 +65,7 @@ class whois {
 
 							$string .= $line;
 
-							$lineArr = split(":", $line);
+							$lineArr = explode (":", $line);
 
 							if (strtolower($lineArr[0]) == 'whois server') {
 								$whois_server = trim($lineArr[1]);
@@ -111,7 +111,7 @@ class whois {
     }
 
     function get_tld() {
-        $domain = split("\.", $this->domain);
+        $domain = explode (".", $this->domain);
         if (count($domain) > 2) {
             for ($i = 1; $i < count($domain); $i++) {
                 if ($i == 1) {
@@ -126,7 +126,7 @@ class whois {
     }
 
     function get_domain() {
-        $domain = split("\.", $this->domain);
+        $domain = explode (".", $this->domain);
         $this->domainname = $domain[0];
     }
 
@@ -140,7 +140,7 @@ class whois {
         $whois_string2 = @ereg_replace($this->domain, '', $whois_string);
         $whois_string = @preg_replace("/\s+/", ' ', $whois_string);
 
-        $array = split(":", $not_found_string);
+        $array = explode (":", $not_found_string);
         if ($array[0] == "MAXCHARS") {
             if (strlen($whois_string2) <= $array[1]) {
                 return true;
@@ -163,8 +163,8 @@ class whois {
         ) {
             $tmp_domain = strtolower($this->domainname);
             if (
-                ereg("^[a-z0-9\-]{3,}$", $tmp_domain) 
-                && !ereg("^-|-$", $tmp_domain) //&& !preg_match("/--/", $tmp_domain)
+                preg_match("/^[a-z0-9\-]{3,}$/", $tmp_domain) 
+                && !preg_match("/^-|-$/", $tmp_domain) //&& !preg_match("/--/", $tmp_domain)
             ) {
                 return true;
             }
