@@ -137,7 +137,7 @@ class whois {
            $not_found_string = $this->servers[$this->tldname][1];
         }
 
-        $whois_string2 = @ereg_replace($this->domain, '', $whois_string);
+        $whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
         $whois_string = @preg_replace("/\s+/", ' ', $whois_string);
 
         $array = explode (":", $not_found_string);
