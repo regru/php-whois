@@ -1144,8 +1144,8 @@
         "No match"
     ],
     "kz": [
-        "whois.domain.kz",
-        "No entries found"
+        "whois.nic.kz",
+        "Nothing found for this query."
     ],
     "ch": [
         "whois.nic.ch",
@@ -1212,8 +1212,8 @@
         "No match"
     ],
     "aero": [
-        "whois.information.aero",
-        "is available"
+        "whois.aero",
+        "NOT FOUND"
     ],
     "by": [
         "whois.ripe.net",
@@ -1257,7 +1257,7 @@
     ],
     "eu": [
         "whois.eu",
-        "Status:    AVAILABLE"
+        "Status: AVAILABLE"
     ],
     "co.nz": [
         "whois.srs.net.nz",
@@ -1479,8 +1479,12 @@
         "whois.ripn.net",
         "No entries found"
     ],
+    "xn--p1ai": [
+        "whois.nic.ru",
+        "No entries found"
+    ],
     "pp.ru": [
-        "whois.ripn.net",
+        "whois.nic.ru",
         "No entries found"
     ],
     "net.ru": [
@@ -1492,11 +1496,11 @@
         "No entries found"
     ],
     "spb.ru": [
-        "whois.relcom.ru",
+        "whois.ripn.net",
         "No entries found"
     ],
     "msk.ru": [
-        "whois.relcom.ru",
+        "whois.ripn.net",
         "No entries found"
     ],
     "su": [
