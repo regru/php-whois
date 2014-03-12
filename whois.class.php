@@ -21,10 +21,10 @@ class whois {
 
             // If tldname have been found
             if ($whois_server != '') {
-				
+
 				// if whois server serve replay over HTTP protocol instead of WHOIS protocol
 				if(preg_match("/^https?:\/\//i", $whois_server)){
-				
+
 					// curl session to get whois reposnse
 					$ch = curl_init();
 					$url = $whois_server . $this->domainname . '.' . $this->tldname;
@@ -34,7 +34,7 @@ class whois {
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 					curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 					curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-					
+
 					$data = curl_exec($ch);
 
 					if (curl_error($ch)){
@@ -45,7 +45,7 @@ class whois {
 					curl_close($ch);
 
 				}else{
-					
+
 					// Getting whois information
 					$fp = fsockopen($whois_server, 43);
 					if (!$fp) {
@@ -158,12 +158,12 @@ class whois {
 
     function is_valid() {
         if (
-            isset($this->servers[$this->tldname][0]) 
+            isset($this->servers[$this->tldname][0])
             && strlen($this->servers[$this->tldname][0]) > 6
         ) {
             $tmp_domain = strtolower($this->domainname);
             if (
-                preg_match("/^[a-z0-9\-]{3,}$/", $tmp_domain) 
+                preg_match("/^[a-z0-9\-]{3,}$/", $tmp_domain)
                 && !preg_match("/^-|-$/", $tmp_domain) //&& !preg_match("/--/", $tmp_domain)
             ) {
                 return true;
