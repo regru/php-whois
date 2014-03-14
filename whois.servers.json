@@ -507,6 +507,10 @@
         "whois.denic.de",
         "Status: free"
     ],
+    "com.de": [
+        "whois.centralnic.com",
+        "Status: free"
+    ],
     "dk": [
         "whois.dk-hostmaster.dk",
         "No entries found"
@@ -1480,7 +1484,7 @@
         "No entries found"
     ],
     "xn--p1ai": [
-        "whois.nic.ru",
+        "whois.ripn.net",
         "No entries found"
     ],
     "pp.ru": [
@@ -1492,19 +1496,23 @@
         "No entries found"
     ],
     "org.ru": [
-        "whois.ripn.net",
+        "whois.nic.ru",
         "No entries found"
     ],
     "spb.ru": [
-        "whois.ripn.net",
+        "whois.nic.ru",
         "No entries found"
     ],
     "msk.ru": [
-        "whois.ripn.net",
+        "whois.nic.ru",
         "No entries found"
     ],
     "su": [
         "whois.ripn.net",
+        "No entries found"
+    ],
+    "sochi.su": [
+        "whois.nic.ru",
         "No entries found"
     ],
     "com.ru": [
