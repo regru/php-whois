@@ -27,6 +27,10 @@
         "whois.nic.uk",
         "No match"
     ],
+    "lc": [
+        "whois2.afilias-grs.net",
+        "NOT FOUND"
+    ],
     "plc.uk": [
         "whois.nic.uk",
         "No match"
@@ -1220,7 +1224,7 @@
         "NOT FOUND"
     ],
     "by": [
-        "whois.ripe.net",
+        "whois.cctld.by",
         "no entries found"
     ],
     "ad": [
