@@ -1,22 +1,27 @@
 <?php
 
-class whois {
-    var $domain;
-    var $tldname;
-    var $domainname;
+namespace Phois\Whois;
 
-    var $servers;
+class Whois {
 
-    function whois ($domain_name) {
+    private $domain;
+    
+    private $tldname;
+    
+    private $domainname;
+    
+    private $servers;
+
+    public function __construct ($domain_name) {
         $this->domain = $domain_name;
-        $this->get_tld();
-        $this->get_domain();
+        $this->getTLD();
+        $this->getDomain();
         // setup whois servers array from json file
         $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ),TRUE);
     }
 
-    function info() {
-        if ($this->is_valid()) {
+    public function info() {
+        if ($this->isValid()) {
             $whois_server = $this->servers[$this->tldname][0];
 
             // If tldname have been found
@@ -106,11 +111,11 @@ class whois {
         }
     }
 
-    function html_info() {
+    public function htmlInfo() {
         return nl2br($this->info());
     }
 
-    function get_tld() {
+    public function getTLD() {
         $domain = explode (".", $this->domain);
         if (count($domain) > 2) {
             for ($i = 1; $i < count($domain); $i++) {
@@ -125,12 +130,12 @@ class whois {
         }
     }
 
-    function get_domain() {
+    public function getDomain() {
         $domain = explode (".", $this->domain);
         $this->domainname = $domain[0];
     }
 
-    function is_available() {
+    public function isAvailable() {
         $whois_string = $this->info();
         $not_found_string = '';
         if (isset($this->servers[$this->tldname][1])) {
@@ -156,7 +161,7 @@ class whois {
         }
     }
 
-    function is_valid() {
+    public function isValid() {
         if (
             isset($this->servers[$this->tldname][0])
             && strlen($this->servers[$this->tldname][0]) > 6

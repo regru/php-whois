@@ -1,0 +1,21 @@
+{
+    "name": "phois/whois",
+    "description": "Whois client.",
+    "keywords": ["whois"],
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Rivera",
+            "email": "David.R.Rivera193@gmail.com",
+            "homepage": "http://www.protodx.com",
+            "role": "Systems Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": { "Phois\\Whois": "src" }
+    }
+}

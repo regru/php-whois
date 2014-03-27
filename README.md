@@ -8,20 +8,18 @@ PHP class to retrieve WHOIS information.
 
 <?php
 
-include('whois.class.php');
+$sld = 'reg.ru';
 
-$domain_name = 'reg.ru';
+$domain = new Phois\Whois\Whois($sld);
 
-$domain = new whois( $domain_name );
 $whois_answer = $domain->info();
 
 echo $whois_answer;
 
-if ($domain->is_available()) {
+if ($domain->isAvailable()) {
     echo "Domain is available\n";
 } else {
     echo "Domain is registered\n";
 }
 
 ```
-
