@@ -27,80 +27,79 @@ class Whois {
             // If tldname have been found
             if ($whois_server != '') {
 
-				// if whois server serve replay over HTTP protocol instead of WHOIS protocol
-				if(preg_match("/^https?:\/\//i", $whois_server)){
+                // if whois server serve replay over HTTP protocol instead of WHOIS protocol
+                if (preg_match("/^https?:\/\//i", $whois_server)) {
 
-					// curl session to get whois reposnse
-					$ch = curl_init();
-					$url = $whois_server . $this->domainname . '.' . $this->tldname;
-					curl_setopt($ch, CURLOPT_URL, $url);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
-					curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-					curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-					curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                    // curl session to get whois reposnse
+                    $ch = curl_init();
+                    $url = $whois_server . $this->domainname . '.' . $this->tldname;
+                    curl_setopt($ch, CURLOPT_URL, $url);
+                    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
+                    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+                    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-					$data = curl_exec($ch);
+                    $data = curl_exec($ch);
 
-					if (curl_error($ch)){
-						return "Connection error!";
-					}else {
-						$string = strip_tags($data);
-					}
-					curl_close($ch);
+                    if (curl_error($ch)) {
+                        return "Connection error!";
+                    } else {
+                        $string = strip_tags($data);
+                    }
+                    curl_close($ch);
 
-				}else{
+                } else {
 
-					// Getting whois information
-					$fp = fsockopen($whois_server, 43);
-					if (!$fp) {
-						return "Connection error!";
-					}
+                    // Getting whois information
+                    $fp = fsockopen($whois_server, 43);
+                    if (!$fp) {
+                        return "Connection error!";
+                    }
 
-					$dom = $this->domainname . '.' . $this->tldname;
-					fputs($fp, "$dom\r\n");
+                    $dom = $this->domainname . '.' . $this->tldname;
+                    fputs($fp, "$dom\r\n");
 
-					// Getting string
-					$string = '';
+                    // Getting string
+                    $string = '';
 
-					// Checking whois server for .com and .net
-					if ($this->tldname == 'com' || $this->tldname == 'net') {
-						while (!feof($fp)) {
-							$line = trim(fgets($fp, 128));
+                    // Checking whois server for .com and .net
+                    if ($this->tldname == 'com' || $this->tldname == 'net') {
+                        while (!feof($fp)) {
+                            $line = trim(fgets($fp, 128));
 
-							$string .= $line;
+                            $string .= $line;
 
-							$lineArr = explode (":", $line);
+                            $lineArr = explode (":", $line);
 
-							if (strtolower($lineArr[0]) == 'whois server') {
-								$whois_server = trim($lineArr[1]);
-							}
-						}
-						// Getting whois information
-						$fp = fsockopen($whois_server, 43);
-						if (!$fp) {
-							return "Connection error!";
-						}
+                            if (strtolower($lineArr[0]) == 'whois server') {
+                                $whois_server = trim($lineArr[1]);
+                            }
+                        }
+                        // Getting whois information
+                        $fp = fsockopen($whois_server, 43);
+                        if (!$fp) {
+                            return "Connection error!";
+                        }
 
+                        $dom = $this->domainname . '.' . $this->tldname;
+                        fputs($fp, "$dom\r\n");
 
-						$dom = $this->domainname . '.' . $this->tldname;
-						fputs($fp, "$dom\r\n");
+                        // Getting string
+                        $string = '';
 
-						// Getting string
-						$string = '';
+                        while (!feof($fp)) {
+                            $string .= fgets($fp, 128);
+                        }
 
-						while (!feof($fp)) {
-							$string .= fgets($fp, 128);
-						}
-
-						// Checking for other tld's
-					} else {
-						while (!feof($fp)) {
-							$string .= fgets($fp, 128);
-						}
-					}
-					fclose($fp);
-				}
+                        // Checking for other tld's
+                    } else {
+                        while (!feof($fp)) {
+                            $string .= fgets($fp, 128);
+                        }
+                    }
+                    fclose($fp);
+                }
 
                 return htmlspecialchars($string);
             } else {
