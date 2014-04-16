@@ -14,8 +14,7 @@ class Whois {
 
     public function __construct ($domain_name) {
         $this->domain = $domain_name;
-        $this->getTLD();
-        $this->getDomain();
+        $this->splitDomain();
         // setup whois servers array from json file
         $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ),TRUE);
     }
@@ -114,24 +113,10 @@ class Whois {
         return nl2br($this->info());
     }
 
-    public function getTLD() {
-        $domain = explode (".", $this->domain);
-        if (count($domain) > 2) {
-            for ($i = 1; $i < count($domain); $i++) {
-                if ($i == 1) {
-                    $this->tldname = $domain[$i];
-                } else {
-                    $this->tldname .= '.' . $domain[$i];
-                }
-            }
-        } else {
-            $this->tldname = $domain[1];
-        }
-    }
-
-    public function getDomain() {
-        $domain = explode (".", $this->domain);
-        $this->domainname = $domain[0];
+    private function splitDomain(){
+        $domains = explode (".", $this->domain);
+        $this->domainname = array_shift($domains);
+        $this->tldname = implode(".", $domains)
     }
 
     public function isAvailable() {
