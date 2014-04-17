@@ -6,14 +6,14 @@ class Whois {
 
     private $domain;
     
-    private $tldname;
+    private $TLDs;
     
-    private $domainname;
+    private $subDomain;
     
     private $servers;
 
-    public function __construct ($domain_name) {
-        $this->domain = $domain_name;
+    public function __construct ($domain) {
+        $this->domain = $domain;
         $this->splitDomain();
         // setup whois servers array from json file
         $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ),TRUE);
@@ -21,9 +21,9 @@ class Whois {
 
     public function info() {
         if ($this->isValid()) {
-            $whois_server = $this->servers[$this->tldname][0];
+            $whois_server = $this->servers[$this->TLDs][0];
 
-            // If tldname have been found
+            // If TLDs have been found
             if ($whois_server != '') {
 
                 // if whois server serve replay over HTTP protocol instead of WHOIS protocol
@@ -31,7 +31,7 @@ class Whois {
 
                     // curl session to get whois reposnse
                     $ch = curl_init();
-                    $url = $whois_server . $this->domainname . '.' . $this->tldname;
+                    $url = $whois_server . $this->subDomain . '.' . $this->TLDs;
                     curl_setopt($ch, CURLOPT_URL, $url);
                     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
                     curl_setopt($ch, CURLOPT_TIMEOUT, 60);
@@ -56,14 +56,14 @@ class Whois {
                         return "Connection error!";
                     }
 
-                    $dom = $this->domainname . '.' . $this->tldname;
+                    $dom = $this->subDomain . '.' . $this->TLDs;
                     fputs($fp, "$dom\r\n");
 
                     // Getting string
                     $string = '';
 
                     // Checking whois server for .com and .net
-                    if ($this->tldname == 'com' || $this->tldname == 'net') {
+                    if ($this->TLDs == 'com' || $this->TLDs == 'net') {
                         while (!feof($fp)) {
                             $line = trim(fgets($fp, 128));
 
@@ -81,7 +81,7 @@ class Whois {
                             return "Connection error!";
                         }
 
-                        $dom = $this->domainname . '.' . $this->tldname;
+                        $dom = $this->subDomain . '.' . $this->TLDs;
                         fputs($fp, "$dom\r\n");
 
                         // Getting string
@@ -113,17 +113,33 @@ class Whois {
         return nl2br($this->info());
     }
 
+    // split full domain name on subdomain and TLDs
     private function splitDomain(){
         $domains = explode (".", $this->domain);
-        $this->domainname = array_shift($domains);
-        $this->tldname = implode(".", $domains)
+        $this->subDomain = array_shift($domains);
+        $this->TLDs = implode(".", $domains)
+    }
+    
+    // return full domain name
+    public function getDomain(){
+        return $this->domain;
+    }
+    
+    // return top level domains separated by dot
+    public function getTLDs(){
+        return $this->TLDs;
+    }
+    
+    // return subdomain (low level domain)
+    public function getSubDomain(){
+        return $this->subDomain;
     }
 
     public function isAvailable() {
         $whois_string = $this->info();
         $not_found_string = '';
-        if (isset($this->servers[$this->tldname][1])) {
-           $not_found_string = $this->servers[$this->tldname][1];
+        if (isset($this->servers[$this->TLDs][1])) {
+           $not_found_string = $this->servers[$this->TLDs][1];
         }
 
         $whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
@@ -147,10 +163,10 @@ class Whois {
 
     public function isValid() {
         if (
-            isset($this->servers[$this->tldname][0])
-            && strlen($this->servers[$this->tldname][0]) > 6
+            isset($this->servers[$this->TLDs][0])
+            && strlen($this->servers[$this->TLDs][0]) > 6
         ) {
-            $tmp_domain = strtolower($this->domainname);
+            $tmp_domain = strtolower($this->subDomain);
             if (
                 preg_match("/^[a-z0-9\-]{3,}$/", $tmp_domain)
                 && !preg_match("/^-|-$/", $tmp_domain) //&& !preg_match("/--/", $tmp_domain)
