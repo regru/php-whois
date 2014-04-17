@@ -12,11 +12,19 @@ class Whois {
     
     private $servers;
 
+    /**
+     * @param string $domain full domain name (without trailing dot)
+     */
     public function __construct ($domain) {
         $this->domain = $domain;
-        $this->splitDomain();
+        // check $domain syntax and split full domain name on subdomain and TLDs
+        if (preg_match('/^([\p{L}\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches)){
+            $this->subDomain = $matches[1];
+            $this->TLDs = $matches[2];
+        } else 
+            throw new \InvalidArgumentException('Invalid $domain syntax');    
         // setup whois servers array from json file
-        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ),TRUE);
+        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), TRUE);
     }
 
     public function info() {
@@ -113,24 +121,23 @@ class Whois {
         return nl2br($this->info());
     }
 
-    // split full domain name on subdomain and TLDs
-    private function splitDomain(){
-        $domains = explode (".", $this->domain);
-        $this->subDomain = array_shift($domains);
-        $this->TLDs = implode(".", $domains)
-    }
-    
-    // return full domain name
+    /**
+     * @return string full domain name 
+     */
     public function getDomain(){
         return $this->domain;
     }
     
-    // return top level domains separated by dot
+    /**
+     * @return string top level domains separated by dot  
+     */
     public function getTLDs(){
         return $this->TLDs;
     }
     
-    // return subdomain (low level domain)
+    /**
+     * @return string return subdomain (low level domain)
+     */
     public function getSubDomain(){
         return $this->subDomain;
     }
