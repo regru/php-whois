@@ -6,25 +6,32 @@ class Whois {
 
     private $domain;
     
-    private $tldname;
+    private $TLDs;
     
-    private $domainname;
+    private $subDomain;
     
     private $servers;
 
-    public function __construct ($domain_name) {
-        $this->domain = $domain_name;
-        $this->getTLD();
-        $this->getDomain();
+    /**
+     * @param string $domain full domain name (without trailing dot)
+     */
+    public function __construct ($domain) {
+        $this->domain = $domain;
+        // check $domain syntax and split full domain name on subdomain and TLDs
+        if (preg_match('/^([\p{L}\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches)){
+            $this->subDomain = $matches[1];
+            $this->TLDs = $matches[2];
+        } else 
+            throw new \InvalidArgumentException('Invalid $domain syntax');    
         // setup whois servers array from json file
-        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ),TRUE);
+        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), TRUE);
     }
 
     public function info() {
         if ($this->isValid()) {
-            $whois_server = $this->servers[$this->tldname][0];
+            $whois_server = $this->servers[$this->TLDs][0];
 
-            // If tldname have been found
+            // If TLDs have been found
             if ($whois_server != '') {
 
                 // if whois server serve replay over HTTP protocol instead of WHOIS protocol
@@ -32,7 +39,7 @@ class Whois {
 
                     // curl session to get whois reposnse
                     $ch = curl_init();
-                    $url = $whois_server . $this->domainname . '.' . $this->tldname;
+                    $url = $whois_server . $this->subDomain . '.' . $this->TLDs;
                     curl_setopt($ch, CURLOPT_URL, $url);
                     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
                     curl_setopt($ch, CURLOPT_TIMEOUT, 60);
@@ -57,14 +64,14 @@ class Whois {
                         return "Connection error!";
                     }
 
-                    $dom = $this->domainname . '.' . $this->tldname;
+                    $dom = $this->subDomain . '.' . $this->TLDs;
                     fputs($fp, "$dom\r\n");
 
                     // Getting string
                     $string = '';
 
                     // Checking whois server for .com and .net
-                    if ($this->tldname == 'com' || $this->tldname == 'net') {
+                    if ($this->TLDs == 'com' || $this->TLDs == 'net') {
                         while (!feof($fp)) {
                             $line = trim(fgets($fp, 128));
 
@@ -82,7 +89,7 @@ class Whois {
                             return "Connection error!";
                         }
 
-                        $dom = $this->domainname . '.' . $this->tldname;
+                        $dom = $this->subDomain . '.' . $this->TLDs;
                         fputs($fp, "$dom\r\n");
 
                         // Getting string
@@ -114,31 +121,32 @@ class Whois {
         return nl2br($this->info());
     }
 
-    public function getTLD() {
-        $domain = explode (".", $this->domain);
-        if (count($domain) > 2) {
-            for ($i = 1; $i < count($domain); $i++) {
-                if ($i == 1) {
-                    $this->tldname = $domain[$i];
-                } else {
-                    $this->tldname .= '.' . $domain[$i];
-                }
-            }
-        } else {
-            $this->tldname = $domain[1];
-        }
+    /**
+     * @return string full domain name 
+     */
+    public function getDomain(){
+        return $this->domain;
     }
-
-    public function getDomain() {
-        $domain = explode (".", $this->domain);
-        $this->domainname = $domain[0];
+    
+    /**
+     * @return string top level domains separated by dot  
+     */
+    public function getTLDs(){
+        return $this->TLDs;
+    }
+    
+    /**
+     * @return string return subdomain (low level domain)
+     */
+    public function getSubDomain(){
+        return $this->subDomain;
     }
 
     public function isAvailable() {
         $whois_string = $this->info();
         $not_found_string = '';
-        if (isset($this->servers[$this->tldname][1])) {
-           $not_found_string = $this->servers[$this->tldname][1];
+        if (isset($this->servers[$this->TLDs][1])) {
+           $not_found_string = $this->servers[$this->TLDs][1];
         }
 
         $whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
@@ -162,10 +170,10 @@ class Whois {
 
     public function isValid() {
         if (
-            isset($this->servers[$this->tldname][0])
-            && strlen($this->servers[$this->tldname][0]) > 6
+            isset($this->servers[$this->TLDs][0])
+            && strlen($this->servers[$this->TLDs][0]) > 6
         ) {
-            $tmp_domain = strtolower($this->domainname);
+            $tmp_domain = strtolower($this->subDomain);
             if (
                 preg_match("/^[a-z0-9\-]{3,}$/", $tmp_domain)
                 && !preg_match("/^-|-$/", $tmp_domain) //&& !preg_match("/--/", $tmp_domain)
