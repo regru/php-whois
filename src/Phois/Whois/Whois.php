@@ -18,7 +18,7 @@ class Whois {
     public function __construct ($domain) {
         $this->domain = $domain;
         // check $domain syntax and split full domain name on subdomain and TLDs
-        if (preg_match('/^([\p{L}\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches)){
+        if (preg_match('/^([\p{L}\d\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches)){
             $this->subDomain = $matches[1];
             $this->TLDs = $matches[2];
         } else 
