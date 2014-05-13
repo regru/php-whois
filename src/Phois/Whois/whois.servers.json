@@ -148,28 +148,28 @@
         "nothing found"
     ],
     "asn.au": [
-        "whois-check.ausregistry.net.au",
-        "---Available"
+        "whois.aunic.net",
+        "No Data Found"
     ],
     "com.au": [
-        "whois-check.ausregistry.net.au",
-        "---Available"
+        "whois.aunic.net",
+        "No Data Found"
     ],
     "edu.au": [
-        "whois-check.ausregistry.net.au",
-        "---Available"
+        "whois.aunic.net",
+        "No Data Found"
     ],
     "org.au": [
-        "whois-check.ausregistry.net.au",
-        "---Available"
+        "whois.aunic.net",
+        "No Data Found"
     ],
     "net.au": [
-        "whois-check.ausregistry.net.au",
-        "---Available"
+        "whois.aunic.net",
+        "No Data Found"
     ],
     "id.au": [
-        "whois-check.ausregistry.net.au",
-        "---Available"
+        "whois.aunic.net",
+        "No Data Found"
     ],
     "be": [
         "whois.dns.be",
@@ -577,7 +577,7 @@
     ],
     "gs": [
         "whois.nic.gs",
-        "Domain Status: Available"
+        "No Object Found"
     ],
     "co.il": [
         "whois.isoc.org.il",
@@ -733,11 +733,11 @@
     ],
     "ms": [
         "whois.nic.ms",
-        "Domain Status: Available"
+        "No Object Found"
     ],
     "mx": [
         "whois.nic.mx",
-        "No_Se_Encontro_El_Objeto\/Object_Not_Found"
+        "Object_Not_Found"
     ],
     "com.mx": [
         "whois.nic.mx",
@@ -768,8 +768,8 @@
         "is free"
     ],
     "no": [
-        "finger.norid.no:79",
-        "is available"
+        "whois.norid.no",
+        "No match"
     ],
     "nu": [
         "whois.nic.nu",
@@ -1017,7 +1017,7 @@
     ],
     "tm": [
         "whois.nic.tm",
-        "To purchase please go to"
+        "is available"
     ],
     "to": [
         "monarch.tonic.to",
@@ -1093,7 +1093,7 @@
     ],
     "vg": [
         "whois.adamsnames.tc",
-        "Available"
+        "No Object Found"
     ],
     "ac.za": [
         "whois.co.za",
@@ -1149,7 +1149,7 @@
     ],
     "sh": [
         "whois.nic.sh",
-        "No match"
+        "is available for purchase"
     ],
     "kz": [
         "whois.nic.kz",
@@ -1172,7 +1172,7 @@
         "Not found"
     ],
     "ws": [
-        "whois.nic.ws",
+        "whois.website.ws",
         "No match for"
     ],
     "gov": [
