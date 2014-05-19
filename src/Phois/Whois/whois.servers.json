@@ -1456,8 +1456,8 @@
         "Not found"
     ],
     "hr": [
-        "whois.dns.hr",
-        "no entries found"
+        "http:\/\/dns.hr\/?only_mod_instance=300_612_0&clean_tpl=true&ds_domena=",
+        "nije registrirana"
     ],
     "im": [
         "whois.nic.im",
