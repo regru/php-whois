@@ -983,6 +983,10 @@
         "whois.nic.tf",
         "No entries found"
     ],
+    "tt": [
+        "https:\/\/www.nic.tt\/cgi-bin\/search.pl?name=",
+        "is available"
+    ],
     "ac.th": [
         "whois.thnic.net",
         "No match for"
@@ -1450,6 +1454,10 @@
     "tel": [
         "whois.nic.tel",
         "Not found"
+    ],
+    "hr": [
+        "http:\/\/dns.hr\/?only_mod_instance=300_612_0&clean_tpl=true&ds_domena=",
+        "nije registrirana"
     ],
     "im": [
         "whois.nic.im",
