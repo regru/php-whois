@@ -108,7 +108,10 @@ class Whois {
                     fclose($fp);
                 }
 
-                return htmlspecialchars($string);
+				$string_encoding = mb_detect_encoding($string, "UTF-8, ISO-8859-1, ISO-8859-15", true);
+				$string_utf8 = mb_convert_encoding($string, "UTF-8", $string_encoding);
+
+                return htmlspecialchars($string_utf8, ENT_COMPAT, "UTF-8", true);
             } else {
                 return "No whois server for this tld in list!";
             }
