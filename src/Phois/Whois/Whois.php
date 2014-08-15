@@ -2,32 +2,34 @@
 
 namespace Phois\Whois;
 
-class Whois {
-
+class Whois
+{
     private $domain;
-    
+
     private $TLDs;
-    
+
     private $subDomain;
-    
+
     private $servers;
 
     /**
      * @param string $domain full domain name (without trailing dot)
      */
-    public function __construct ($domain) {
+    public function __construct($domain)
+    {
         $this->domain = $domain;
         // check $domain syntax and split full domain name on subdomain and TLDs
-        if (preg_match('/^([\p{L}\d\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches)){
+        if (preg_match('/^([\p{L}\d\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches)) {
             $this->subDomain = $matches[1];
             $this->TLDs = $matches[2];
-        } else 
-            throw new \InvalidArgumentException('Invalid $domain syntax');    
+        } else
+            throw new \InvalidArgumentException('Invalid $domain syntax');
         // setup whois servers array from json file
-        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), TRUE);
+        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), true);
     }
 
-    public function info() {
+    public function info()
+    {
         if ($this->isValid()) {
             $whois_server = $this->servers[$this->TLDs][0];
 
@@ -108,8 +110,8 @@ class Whois {
                     fclose($fp);
                 }
 
-				$string_encoding = mb_detect_encoding($string, "UTF-8, ISO-8859-1, ISO-8859-15", true);
-				$string_utf8 = mb_convert_encoding($string, "UTF-8", $string_encoding);
+                $string_encoding = mb_detect_encoding($string, "UTF-8, ISO-8859-1, ISO-8859-15", true);
+                $string_utf8 = mb_convert_encoding($string, "UTF-8", $string_encoding);
 
                 return htmlspecialchars($string_utf8, ENT_COMPAT, "UTF-8", true);
             } else {
@@ -120,32 +122,37 @@ class Whois {
         }
     }
 
-    public function htmlInfo() {
+    public function htmlInfo()
+    {
         return nl2br($this->info());
     }
 
     /**
-     * @return string full domain name 
+     * @return string full domain name
      */
-    public function getDomain(){
+    public function getDomain()
+    {
         return $this->domain;
     }
-    
+
     /**
-     * @return string top level domains separated by dot  
+     * @return string top level domains separated by dot
      */
-    public function getTLDs(){
+    public function getTLDs()
+    {
         return $this->TLDs;
     }
-    
+
     /**
      * @return string return subdomain (low level domain)
      */
-    public function getSubDomain(){
+    public function getSubDomain()
+    {
         return $this->subDomain;
     }
 
-    public function isAvailable() {
+    public function isAvailable()
+    {
         $whois_string = $this->info();
         $not_found_string = '';
         if (isset($this->servers[$this->TLDs][1])) {
@@ -171,7 +178,8 @@ class Whois {
         }
     }
 
-    public function isValid() {
+    public function isValid()
+    {
         if (
             isset($this->servers[$this->TLDs][0])
             && strlen($this->servers[$this->TLDs][0]) > 6
@@ -184,6 +192,7 @@ class Whois {
                 return true;
             }
         }
+
         return false;
     }
 }
