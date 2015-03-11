@@ -11,6 +11,8 @@ class Whois
     private $subDomain;
 
     private $servers;
+    
+    private $whoisInfo; 
 
     /**
      * @param string $domain full domain name (without trailing dot)
@@ -29,10 +31,19 @@ class Whois
             throw new \InvalidArgumentException("Invalid $domain syntax");
         // setup whois servers array from json file
         $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), true);
+        
+        if (!$this->isValid())
+        	throw new \InvalidArgumentException("Domain name isn't valid!");
     }
-
+    
+    /**
+     * @param string, domain whois information
+     */
     public function info()
     {
+        if ($this->whoisInfo != '')
+            return $this->whoisInfo;
+
         if ($this->isValid()) {
             $whois_server = $this->servers[$this->TLDs][0];
 
@@ -116,12 +127,13 @@ class Whois
                 $string_encoding = mb_detect_encoding($string, "UTF-8, ISO-8859-1, ISO-8859-15", true);
                 $string_utf8 = mb_convert_encoding($string, "UTF-8", $string_encoding);
 
-                return htmlspecialchars($string_utf8, ENT_COMPAT, "UTF-8", true);
+                $this->whoisInfo = htmlspecialchars($string_utf8, ENT_COMPAT, "UTF-8", true);
+                return $this->whoisInfo;
             } else {
                 return "No whois server for this tld in list!";
             }
         } else {
-            return "Domainname isn't valid!";
+            return "Domain name isn't valid!";
         }
     }
 
@@ -153,10 +165,16 @@ class Whois
     {
         return $this->subDomain;
     }
-
+    
+	/**
+     * @return boolean, true for domain avaliable, false for domain registered
+     */
     public function isAvailable()
     {
-        $whois_string = $this->info();
+        if ($this->whoisInfo == '')
+            $whois_string = $this->info();
+        else 
+        	$whois_string = $this->whoisInfo;
         $not_found_string = '';
         if (isset($this->servers[$this->TLDs][1])) {
            $not_found_string = $this->servers[$this->TLDs][1];
