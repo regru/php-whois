@@ -29,8 +29,14 @@ class Whois
             throw new \InvalidArgumentException("Invalid $domain syntax");
         // setup whois servers array from json file
         $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), true);
+        
+        if (!$this->isValid())
+        	throw new \InvalidArgumentException("Domain name isn't valid!");
     }
-
+    
+    /**
+     * @param string, domain whois information
+     */
     public function info()
     {
         if ($this->isValid()) {
@@ -121,7 +127,7 @@ class Whois
                 return "No whois server for this tld in list!";
             }
         } else {
-            return "Domainname isn't valid!";
+            return "Domain name isn't valid!";
         }
     }
 
@@ -153,7 +159,10 @@ class Whois
     {
         return $this->subDomain;
     }
-
+    
+	/**
+     * @return boolean, true for domain avaliable, false for domain registered
+     */
     public function isAvailable()
     {
         $whois_string = $this->info();
