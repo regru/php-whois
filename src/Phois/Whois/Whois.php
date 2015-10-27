@@ -121,7 +121,7 @@ class Whois
                 return "No whois server for this tld in list!";
             }
         } else {
-            return "Domainname isn't valid!";
+            return "Domain name isn't valid!";
         }
     }
 
