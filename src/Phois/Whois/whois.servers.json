@@ -1384,8 +1384,8 @@
         "% no matching objects found"
     ],
     "go.id": [
-        "whois.idnic.net.id",
-        "Not found"
+        "whois.pandi.or.id",
+        "DOMAIN NOT FOUND"
     ],
     "go.jp": [
         "whois.nic.ad.jp",
@@ -2148,8 +2148,8 @@
         "DOMINIO NO REGISTRADO"
     ],
     "mil.id": [
-        "whois.idnic.net.id",
-        "Not found"
+        "whois.pandi.or.id",
+        "DOMAIN NOT FOUND"
     ],
     "mil.pl": [
         "whois.dns.pl",
@@ -3546,6 +3546,10 @@
     "watch": [
         "whois.donuts.co",
         "Domain not found."
+    ],
+    "web.id": [
+        "whois.pandi.or.id",
+        "DOMAIN NOT FOUND"
     ],
     "web.ve": [
         "whois.nic.ve",
