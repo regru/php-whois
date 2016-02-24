@@ -3077,7 +3077,8 @@
     ],
     "sk": [
         "whois.sk-nic.sk",
-        "Not found"
+        "Not found",
+        "NEGATION:The Domain cannot be registered"
     ],
     "sklep.pl": [
         "whois.dns.pl",

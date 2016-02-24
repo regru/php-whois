@@ -154,32 +154,45 @@ class Whois
         return $this->subDomain;
     }
 
-    public function isAvailable()
-    {
-        $whois_string = $this->info();
-        $not_found_string = '';
-        if (isset($this->servers[$this->TLDs][1])) {
-           $not_found_string = $this->servers[$this->TLDs][1];
-        }
+	public function isAvailable()
+	{
+		$whois_string = $this->info();
+		$not_found_string = '';
+		if (isset($this->servers[$this->TLDs][1])) {
+			$not_found_strings = array_slice($this->servers[$this->TLDs], 1);
+		}
 
-        $whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
-        $whois_string = @preg_replace("/\s+/", ' ', $whois_string);
+		$whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
+		$whois_string = @preg_replace("/\s+/", ' ', $whois_string);
 
-        $array = explode (":", $not_found_string);
-        if ($array[0] == "MAXCHARS") {
-            if (strlen($whois_string2) <= $array[1]) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            if (preg_match("/" . $not_found_string . "/i", $whois_string)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
+		$return = true;
+
+		if (is_array($not_found_strings)) {
+			foreach ($not_found_strings as $not_found_string) {
+				$array = explode (":", $not_found_string);
+				if ($array[0] == "MAXCHARS") {
+					if (strlen($whois_string2) <= $array[1]) {
+						$return &= true;
+					} else {
+						$return &= false;
+					}
+				} else if ($array[0] == "NEGATION") {
+					if (preg_match("/" . $array[1] . "/i", $whois_string)) {
+						$return &= false;
+					} else {
+						$return &= true;
+					}
+				} else {
+					if (preg_match("/" . $not_found_string . "/i", $whois_string)) {
+						$return &= true;
+					} else {
+						$return &= false;
+					}
+				}
+			}
+		}
+		return $return;
+	}
 
     public function isValid()
     {
