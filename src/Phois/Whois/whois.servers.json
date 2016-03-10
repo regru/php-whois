@@ -1447,10 +1447,6 @@
         "whois.nic.mm",
         "No domains matched"
     ],
-    "gov.mx": [
-        "whois.nic.mx",
-        "Object_Not_Found"
-    ],
     "gov.my": [
         "whois.mynic.net.my",
         "does not exist"
