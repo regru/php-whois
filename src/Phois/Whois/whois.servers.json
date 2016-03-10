@@ -963,10 +963,6 @@
         "whois.aunic.net",
         "No Data Found"
     ],
-    "edu.cn": [
-        "whois.cnnic.net.cn",
-        "no matching record"
-    ],
     "edu.gr": [
         "http:\/\/grwhois.ics.forth.gr:800\/plainwhois\/plainWhois?domainName=",
         "not exist"
