@@ -55,10 +55,6 @@
         "whois.ja.net",
         "Sorry - no"
     ],
-    "ac.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "academy": [
         "whois.donuts.co",
         "Domain not found"
@@ -130,10 +126,6 @@
     "alsace": [
         "whois-alsace.nic.fr",
         "Requested Domain cannot be found"
-    ],
-    "alt.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "am": [
         "whois.nic.am",
@@ -1019,10 +1011,6 @@
         "whois.metu.edu.tr",
         "No match found"
     ],
-    "edu.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "education": [
         "whois.donuts.co",
         "Domain not found"
@@ -1474,10 +1462,6 @@
     "gov.tr": [
         "whois.metu.edu.tr",
         "No match found"
-    ],
-    "gov.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "gq": [
         "whois.dominio.gq",
@@ -2159,10 +2143,6 @@
         "whois.metu.edu.tr",
         "No match found"
     ],
-    "mil.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "mini": [
         "whois.ksregistry.net",
         "not found..."
@@ -2375,10 +2355,6 @@
         "whois.nic.ve",
         "No match for"
     ],
-    "net.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "network": [
         "whois.donuts.co",
         "Domain not found."
@@ -2406,10 +2382,6 @@
     "ngo.ph": [
         "http:\/\/www2.dot.ph\/WhoIs.asp?Domain=",
         "is still available"
-    ],
-    "ngo.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "nico": [
         "whois.nic.nico",
@@ -2458,10 +2430,6 @@
     "nom.ro": [
         "whois.rotld.ro",
         "No entries found"
-    ],
-    "nom.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "nra": [
         "whois.afilias-srs.net",
@@ -3011,10 +2979,6 @@
         "whois.srs.net.nz",
         "220 Available"
     ],
-    "school.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "schule": [
         "whois.donuts.co",
         "Domain not found."
@@ -3303,10 +3267,6 @@
         "whois.rotld.ro",
         "No entries found"
     ],
-    "tm.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "tmp.br": [
         "whois.nic.br",
         "No match for"
@@ -3550,10 +3510,6 @@
     "web.ve": [
         "whois.nic.ve",
         "No match for"
-    ],
-    "web.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "website": [
         "whois.nic.website",
