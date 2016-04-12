@@ -15,7 +15,7 @@ class Whois
     /**
      * @param string $domain full domain name (without trailing dot)
      */
-    public function __construct($domain)
+    public function __construct($domain, $proxy = false)
     {
         $this->domain = $domain;
         // check $domain syntax and split full domain name on subdomain and TLDs
@@ -25,6 +25,9 @@ class Whois
         ) {
             $this->subDomain = $matches[1];
             $this->TLDs = $matches[2];
+            if ($proxy) {
+                $this->proxy = $proxy;
+            }
         } else
             throw new \InvalidArgumentException("Invalid $domain syntax");
         // setup whois servers array from json file
@@ -51,6 +54,11 @@ class Whois
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+                    if ($proxy) {
+                        curl_setopt($ch, CURLOPT_PROXY, $proxy['ip']);
+                        curl_setopt($ch, CURLOPT_PROXYPORT, $proxy['port']);
+                    }
 
                     $data = curl_exec($ch);
 
