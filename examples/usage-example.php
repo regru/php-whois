@@ -1,5 +1,7 @@
 <?php
 
+include '../src/Phois/Whois/Whois.php';
+
 $sld = 'reg.ru';
 
 $domain = new Phois\Whois\Whois($sld);
