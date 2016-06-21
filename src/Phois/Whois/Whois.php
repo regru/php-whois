@@ -5,12 +5,10 @@ namespace Phois\Whois;
 class Whois
 {
     private $domain;
-
     private $TLDs;
-
     private $subDomain;
-
     private $servers;
+    private $whoisserver;
 
     /**
      * @param string $domain full domain name (without trailing dot)
@@ -30,11 +28,24 @@ class Whois
         // setup whois servers array from json file
         $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), true);
     }
+    
+    public function setWhoisServer($hostname, $availiable)
+    {
+        $this->whoisserver = array($hostname, $avaiable);
+    }
+    
+    public function getWhoisServer() 
+    {
+        if ( $this->whoisserver ) {
+            return $this->whoisserver;
+        }
+        return $this->servers[$this->TLDs];
+    }
 
     public function info()
     {
         if ($this->isValid()) {
-            $whois_server = $this->servers[$this->TLDs][0];
+            $whois_server = $this->getWhoisServer();
 
             // If TLDs have been found
             if ($whois_server != '') {
@@ -158,8 +169,9 @@ class Whois
     {
         $whois_string = $this->info();
         $not_found_string = '';
-        if (isset($this->servers[$this->TLDs][1])) {
-           $not_found_string = $this->servers[$this->TLDs][1];
+        $whois_server = $this->getWhoisServer();
+        if (isset($whois_server[1])) {
+           $not_found_string = $whois_server[1];
         }
 
         $whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
@@ -183,9 +195,10 @@ class Whois
 
     public function isValid()
     {
+        $whois_server = $this->getWhoisServer();
         if (
-            isset($this->servers[$this->TLDs][0])
-            && strlen($this->servers[$this->TLDs][0]) > 6
+            isset($whois_server[0])
+            && strlen($whois_server[0]) > 6
         ) {
             $tmp_domain = strtolower($this->subDomain);
             if (
