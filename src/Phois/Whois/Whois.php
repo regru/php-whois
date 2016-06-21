@@ -39,7 +39,7 @@ class Whois
             // If TLDs have been found
             if ($whois_server != '') {
 
-                // if whois server serve replay over HTTP protocol instead of WHOIS protocol
+                // if whois server serve reply over HTTP protocol instead of WHOIS protocol
                 if (preg_match("/^https?:\/\//i", $whois_server)) {
 
                     // curl session to get whois reposnse
