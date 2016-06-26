@@ -291,6 +291,10 @@
         "whois1.nic.bi",
         "Domain Status: No Object Found"
     ],
+    "bid": [
+        "whois.nic.bid",
+        "No Domain exists for the search"
+    ],
     "bike": [
         "whois.donuts.co",
         "Domain not found"
@@ -1999,6 +2003,10 @@
         "whois.nic.lotte",
         "DOMAIN NOT FOUND"
     ],
+    "love": [
+        "whois.nic.love",
+        "DOMAIN NOT FOUND"
+    ],
     "lt": [
         "whois.domreg.lt",
         "Status:\t\t\tavailable"
@@ -2647,6 +2655,10 @@
         "whois-ovh.nic.fr",
         "Requested Domain cannot be found"
     ],
+    "online": [
+        "whois.centralnic.com",
+        "DOMAIN NOT FOUND"
+    ],
     "paris": [
         "whois-paris.nic.fr",
         "Requested Domain cannot be found"
@@ -2879,6 +2891,10 @@
         "whois.dns.pl",
         "No information available"
     ],
+    "rent": [
+        "whois.nic.rent",
+        "DOMAIN NOT FOUND"
+    ],
     "rentals": [
         "whois.donuts.co",
         "Domain not found."
@@ -3075,6 +3091,10 @@
         "whois.donuts.co",
         "Domain not found"
     ],
+    "site": [
+        "whois.centralnic.com",
+        "DOMAIN NOT FOUND"
+    ],
     "sk": [
         "whois.sk-nic.sk",
         "Not found"
@@ -3150,6 +3170,10 @@
     "st": [
         "whois.nic.st",
         "No entries found"
+    ],
+    "store": [
+        "whois.nic.store",
+        "DOMAIN NOT FOUND"
     ],
     "store.ro": [
         "whois.rotld.ro",
@@ -3230,6 +3254,10 @@
     "tc": [
         "whois.adamsnames.tc",
         "Available"
+    ],
+    "tech": [
+        "whois.nic.tech",
+        "DOMAIN NOT FOUND"
     ],
     "technology": [
         "whois.donuts.co",
@@ -3346,6 +3374,10 @@
     "toys": [
         "whois.donuts.co",
         "Domain not found."
+    ],
+    "trade": [
+        "whois.nic.trade",
+        "No domain exists for the search"
     ],
     "training": [
         "whois.donuts.co",
@@ -3554,6 +3586,10 @@
     "web.za": [
         "whois.co.za",
         "No information available"
+    ],
+    "webcam": [
+        "whois.nic.webcam",
+        "No domain exists for the search"
     ],
     "website": [
         "whois.nic.website",
