@@ -1,3 +1,5 @@
+_Forked to introduce some changes needed for our company_
+
 # php-whois
 
 PHP class to retrieve WHOIS information.
