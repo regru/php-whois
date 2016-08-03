@@ -11,6 +11,8 @@ class Whois
     private $subDomain;
 
     private $servers;
+    
+    private $overrideServer;
 
     /**
      * @param string $domain full domain name (without trailing dot)
@@ -34,7 +36,10 @@ class Whois
     public function info()
     {
         if ($this->isValid()) {
-            $whois_server = $this->servers[$this->TLDs][0];
+            if($this->overrideServer == '')
+                $whois_server = $this->servers[$this->TLDs][0];
+            else
+                $whois_server = $this->overrideServer;
 
             // If TLDs have been found
             if ($whois_server != '') {
@@ -152,6 +157,11 @@ class Whois
     public function getSubDomain()
     {
         return $this->subDomain;
+    }
+    
+    public function setOverrideServer($overrideServer)
+    {
+        $this->overrideServer = $overrideServer;
     }
 
     public function isAvailable()
