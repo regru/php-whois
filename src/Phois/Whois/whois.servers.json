@@ -3191,6 +3191,10 @@
         "whois.donuts.co",
         "Domain not found."
     ],
+    "swiss": [
+        "whois.nic.swiss",
+        "no matching objects found"
+    ],
     "sx": [
         "whois.sx",
         "Status: AVAILABLE"
