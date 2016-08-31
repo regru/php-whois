@@ -11,6 +11,10 @@ class Whois
     private $subDomain;
 
     private $servers;
+    
+    var $socTimeout = 5;
+    var $socErrno;
+    var $socErrstr;
 
     /**
      * @param string $domain full domain name (without trailing dot)
@@ -64,10 +68,16 @@ class Whois
                 } else {
 
                     // Getting whois information
-                    $fp = fsockopen($whois_server, 43);
+
+                    $fp = fsockopen($whois_server, 43, $this->socErrno, $this->socErrstr, $this->socTimeout);
                     if (!$fp) {
-                        return "Connection error!";
+                        return "Connection error! ".$this->socErrno.":".$this->socErrstr;
                     }
+                    
+                    stream_set_blocking($fp, TRUE); 
+                    stream_set_timeout($fp,$this->socTimeout); 
+                    $info = stream_get_meta_data($fp); 
+                    
 
                     $dom = $this->subDomain . '.' . $this->TLDs;
                     fputs($fp, "$dom\r\n");
@@ -77,7 +87,7 @@ class Whois
 
                     // Checking whois server for .com and .net
                     if ($this->TLDs == 'com' || $this->TLDs == 'net') {
-                        while (!feof($fp)) {
+                        while ( (!feof($fp)) && (!$info['timed_out']) ) {
                             $line = trim(fgets($fp, 128));
 
                             $string .= $line;
@@ -87,12 +97,19 @@ class Whois
                             if (strtolower($lineArr[0]) == 'whois server') {
                                 $whois_server = trim($lineArr[1]);
                             }
+                            
+                            $info = stream_get_meta_data($fp); 
+
                         }
                         // Getting whois information
-                        $fp = fsockopen($whois_server, 43);
+                        $fp = fsockopen($whois_server, 43, $this->socErrno, $this->socErrstr, $this->socTimeout);
                         if (!$fp) {
-                            return "Connection error!";
-                        }
+                            return "Connection error! ".$this->socErrno.":".$this->socErrstr;;
+                        } 
+                        
+                        stream_set_blocking($fp, TRUE); 
+                        stream_set_timeout($fp,$this->socTimeout); 
+                        $info = stream_get_meta_data($fp); 
 
                         $dom = $this->subDomain . '.' . $this->TLDs;
                         fputs($fp, "$dom\r\n");
@@ -106,8 +123,9 @@ class Whois
 
                         // Checking for other tld's
                     } else {
-                        while (!feof($fp)) {
+                       while ( (!feof($fp)) && (!$info['timed_out']) ) {
                             $string .= fgets($fp, 128);
+                            $info = stream_get_meta_data($fp); 
                         }
                     }
                     fclose($fp);
@@ -199,3 +217,4 @@ class Whois
         return false;
     }
 }
+
