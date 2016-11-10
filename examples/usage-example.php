@@ -1,6 +1,6 @@
 <?php
 
-require_once '../src/Phois/Whois/Whois.php';
+include '../src/Phois/Whois/Whois.php';
 
 $sld = 'reg.ru';
 //$sld = 'com.sk'; // Not found. The Domain cannot be registered
