@@ -219,4 +219,9 @@ class Whois
 
         return false;
     }
+
+	public function isServerDefined() {
+		return isset($this->servers[$this->TLDs]);
+	}
+
 }
