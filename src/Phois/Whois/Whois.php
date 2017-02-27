@@ -189,7 +189,7 @@ class Whois
         ) {
             $tmp_domain = strtolower($this->subDomain);
             if (
-                preg_match("/^[a-z0-9\-]{3,}$/", $tmp_domain)
+                preg_match("/^[a-z0-9\-]{2,}$/", $tmp_domain)
                 && !preg_match("/^-|-$/", $tmp_domain) //&& !preg_match("/--/", $tmp_domain)
             ) {
                 return true;
