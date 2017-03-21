@@ -20,7 +20,7 @@ class Whois
         $this->domain = $domain;
         // check $domain syntax and split full domain name on subdomain and TLDs
         if (
-            preg_match('/^([\p{L}\d\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches)
+            preg_match('/^([\p{L}\d\-]+)\.((?:[\p{L}\d\-]+\.?)+)$/ui', $this->domain, $matches)
             || preg_match('/^(xn\-\-[\p{L}\d\-]+)\.(xn\-\-(?:[a-z\d-]+\.?1?)+)$/ui', $this->domain, $matches)
         ) {
             $this->subDomain = $matches[1];
