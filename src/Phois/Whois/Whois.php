@@ -4,6 +4,8 @@ namespace Phois\Whois;
 
 class Whois
 {
+    private $timeout;
+
     private $domain;
 
     private $TLDs;
@@ -47,7 +49,7 @@ class Whois
                     $url = $whois_server . $this->subDomain . '.' . $this->TLDs;
                     curl_setopt($ch, CURLOPT_URL, $url);
                     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
-                    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+                    curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeout);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
@@ -197,5 +199,21 @@ class Whois
         }
 
         return false;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTimeout()
+    {
+        return $this->timeout;
+    }
+
+    /**
+     * @param int $timeout
+     */
+    public function setTimeout($timeout)
+    {
+        $this->timeout = $timeout;
     }
 }
