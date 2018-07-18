@@ -36,7 +36,7 @@ class Whois
         }
         else
         {
-            $this->servers = $this->getDefaultServers();
+            $this->servers = self::getDefaultServers();
         }
     }
 
@@ -208,7 +208,7 @@ class Whois
         return false;
     }
 
-    protected function getDefaultServers()
+    protected static function getDefaultServers()
     {
         return json_decode(trim(file_get_contents(__DIR__.'/whois.servers.json')), true) ?: array();
     }
@@ -223,12 +223,12 @@ class Whois
             }
             else
             {
-                $dat = json_decode($dat, true));
+                $dat = json_decode(trim($dat), true);
             }
         }
         if(is_array($dat))
         {
-            self::$serversData = $merge ? array_merge($this->getDefaultServers(),$dat) : $dat;
+            self::$serversData = $merge ? array_merge(self::getDefaultServers(),$dat) : $dat;
         }
         return self::$serversData;
     }
