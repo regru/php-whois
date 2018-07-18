@@ -12,6 +12,8 @@ class Whois
 
     private $servers;
 
+    private static $serversData;
+
     /**
      * @param string $domain full domain name (without trailing dot)
      */
@@ -28,7 +30,14 @@ class Whois
         } else
             throw new \InvalidArgumentException("Invalid $domain syntax");
         // setup whois servers array from json file
-        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), true);
+        if(is_array(self::$serversData))
+        {
+            $this->servers = self::$serversData;
+        }
+        else
+        {
+            $this->servers = $this->getDefaultServers();
+        }
     }
 
     public function info()
@@ -198,4 +207,30 @@ class Whois
 
         return false;
     }
+
+    protected function getDefaultServers()
+    {
+        return json_decode(trim(file_get_contents(__DIR__.'/whois.servers.json')), true) ?: array();
+    }
+
+    public static function setServers($dat = [],$merge = true)
+    {
+        if(!is_array($dat))
+        {
+            if(is_file($dat))
+            {
+                $dat = json_decode(trim(file_get_contents($dat)), true);
+            }
+            else
+            {
+                $dat = json_decode($dat, true));
+            }
+        }
+        if(is_array($dat))
+        {
+            self::$serversData = $merge ? array_merge($this->getDefaultServers(),$dat) : $dat;
+        }
+        return self::$serversData;
+    }
+
 }
