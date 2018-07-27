@@ -1,5 +1,5 @@
 {
-    "name": "hoaexpress/php-whois",
+    "name": "sparksuite/php-whois",
     "description": "Whois client.",
     "keywords": ["whois"],
     "version": "1.0.0",
