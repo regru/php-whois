@@ -71,6 +71,10 @@ class Whois
 
                 } else {
 
+                    // check whois server exist
+                    if (gethostbyname($whois_server) == $whois_server) {
+                        return "Whois server not exist error!";
+                    }
                     // Getting whois information
                     $fp = fsockopen($whois_server, 43);
                     if (!$fp) {
