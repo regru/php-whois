@@ -2,200 +2,232 @@
 
 namespace Phois\Whois;
 
-class Whois
-{
-    private $domain;
+class Whois {
+	private $domain;
 
-    private $TLDs;
+	private $TLDs;
 
-    private $subDomain;
+	private $subDomain;
 
-    private $servers;
+	private $servers;
+	
+	private $info;
 
-    /**
-     * @param string $domain full domain name (without trailing dot)
-     */
-    public function __construct($domain)
-    {
-        $this->domain = $domain;
-        // check $domain syntax and split full domain name on subdomain and TLDs
-        if (
-            preg_match('/^([\p{L}\d\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches)
-            || preg_match('/^(xn\-\-[\p{L}\d\-]+)\.(xn\-\-(?:[a-z\d-]+\.?1?)+)$/ui', $this->domain, $matches)
-        ) {
-            $this->subDomain = $matches[1];
-            $this->TLDs = $matches[2];
-        } else
-            throw new \InvalidArgumentException("Invalid $domain syntax");
-        // setup whois servers array from json file
-        $this->servers = json_decode(file_get_contents( __DIR__.'/whois.servers.json' ), true);
-    }
+	const CONNECT_TIMEOUT = 30;
+	const TIMEOUT = 30;
 
-    public function info()
-    {
-        if ($this->isValid()) {
-            $whois_server = $this->servers[$this->TLDs][0];
+	/**
+	 * @param string $domain full domain name (without trailing dot)
+	 * @throws \InvalidArgumentException
+	 */
+	public function __construct($domain) {
+		$this->domain = $domain;
+		// check $domain syntax and split full domain name on subdomain and TLDs
+		if (preg_match('/^([\p{L}\d\-]+)\.((?:[\p{L}\-]+\.?)+)$/ui', $this->domain, $matches) ||
+			preg_match('/^(xn\-\-[\p{L}\d\-]+)\.(xn\-\-(?:[a-z\d-]+\.?1?)+)$/ui', $this->domain, $matches)
+		) {
+			$this->subDomain = $matches[1];
+			$this->TLDs = $matches[2];
+		} else {
+			throw new \InvalidArgumentException("Invalid $domain syntax");
+		}
+		// setup whois servers array from json file
+		$this->servers = WhoisServers::getInstance();
+	}
 
-            // If TLDs have been found
-            if ($whois_server != '') {
+	/**
+	 * @return string
+	 * @throws WhoisException
+	 */
+	public function info() {
+		if (!is_null($this->info)) {
+			return $this->info;
+		}
+		if (!$this->isValid()) {
+			throw new WhoisException("Domain name isn't valid!");
+		}
 
-                // if whois server serve replay over HTTP protocol instead of WHOIS protocol
-                if (preg_match("/^https?:\/\//i", $whois_server)) {
+		$whoisServer = $this->servers->getServer($this->TLDs);
 
-                    // curl session to get whois reposnse
-                    $ch = curl_init();
-                    $url = $whois_server . $this->subDomain . '.' . $this->TLDs;
-                    curl_setopt($ch, CURLOPT_URL, $url);
-                    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
-                    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-                    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+		// if whois server serve replay over HTTP protocol instead of WHOIS protocol
+		if (preg_match('/^https?:\/\//i', $whoisServer)) {
+			// curl session to get whois reposnse
+			$string = $this->getWithCurl($whoisServer);
+		} else {
+			$string = $this->getWithSocket($whoisServer);
+		}
 
-                    $data = curl_exec($ch);
+		$string_encoding = mb_detect_encoding($string, 'UTF-8, ISO-8859-1, ISO-8859-15', true);
+		$string_utf8 = mb_convert_encoding($string, 'UTF-8', $string_encoding);
 
-                    if (curl_error($ch)) {
-                        return "Connection error!";
-                    } else {
-                        $string = strip_tags($data);
-                    }
-                    curl_close($ch);
+		$this->info = htmlspecialchars($string_utf8, ENT_COMPAT, 'UTF-8', true);
+		return $this->info;
+	}
+	/**
+	 * @param $whoisServer
+	 * @return string
+	 * @throws WhoisException
+	 */
+	private function getWithCurl($whoisServer) {
+		$ch = curl_init();
+		$url = "$whoisServer{$this->subDomain}.{$this->TLDs}";
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
+		curl_setopt($ch, CURLOPT_TIMEOUT, self::TIMEOUT);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::CONNECT_TIMEOUT);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-                } else {
+		$data = curl_exec($ch);
+		$error = curl_error($ch);
+		curl_close($ch);
 
-                    // Getting whois information
-                    $fp = fsockopen($whois_server, 43);
-                    if (!$fp) {
-                        return "Connection error!";
-                    }
+		if ($error !== '') {
+			throw new WhoisException( "Connection error: $error");
+		}
+		
+		return strip_tags($data);
+	}
 
-                    $dom = $this->subDomain . '.' . $this->TLDs;
-                    fputs($fp, "$dom\r\n");
+	/**
+	 * @param $whoisServer
+	 * @return string
+	 * @throws WhoisException
+	 */
+	private function getWithSocket($whoisServer){
+		if (false === gethostbynamel($whoisServer)) {
+			throw new WhoisException( "Host is unreachable: $whoisServer");
+		}
 
-                    // Getting string
-                    $string = '';
+		$handle = fsockopen($whoisServer, 43, $errno, $errstr, self::CONNECT_TIMEOUT);
 
-                    // Checking whois server for .com and .net
-                    if ($this->TLDs == 'com' || $this->TLDs == 'net') {
-                        while (!feof($fp)) {
-                            $line = trim(fgets($fp, 128));
+		if (!$handle || $errno !== 0) {
+			throw new WhoisException( "Connection error: $errstr");
+		}
 
-                            $string .= $line;
+		stream_set_timeout($handle, self::TIMEOUT);
 
-                            $lineArr = explode (":", $line);
+		$dom = "{$this->subDomain}.{$this->TLDs}";
+		if (false === fwrite($handle, "$dom\r\n")) {
+			throw new WhoisException('Can not write query!');
+		};
+		
+		$string = '';
+		$this->checkTimeout($handle);
+		while (!feof($handle)) {
+			$this->checkStream($handle);
+			$raw = fread($handle,  8192);
+			$this->checkTimeout($handle);
+			if (false === $raw) {
+				throw new WhoisException('Response chunk cannot be read');
+			}
+			$string .= $raw;
+		}
+		fclose($handle);
+		foreach (preg_split("/\r\n|\n|\r/", $string) as $line) {
+			$lineArr = explode(':', trim($line));
+			if (count($lineArr) !== 2) continue;
+			if (false === strpos(strtolower($lineArr[0]),  'whois server')) continue;
+			$newServer = trim($lineArr[1]);
+			if (strlen($newServer) > 0 && $newServer !== $whoisServer) {
+				return $this->getWithSocket($newServer);
+			}
+		}
+		return $string;
+	}
 
-                            if (strtolower($lineArr[0]) == 'whois server') {
-                                $whois_server = trim($lineArr[1]);
-                            }
-                        }
-                        // Getting whois information
-                        $fp = fsockopen($whois_server, 43);
-                        if (!$fp) {
-                            return "Connection error!";
-                        }
+	/**
+	 * @param resource $handle
+	 * @throws WhoisException
+	 */
+	private function checkTimeout($handle) {
+		if (stream_get_meta_data($handle)['timed_out']) {
+			throw new WhoisException('Connection timeout');
+		};
+	}
 
-                        $dom = $this->subDomain . '.' . $this->TLDs;
-                        fputs($fp, "$dom\r\n");
+	/**
+	 * @param resource $handle
+	 * @throws WhoisException
+	 */
+	private function checkStream($handle) {
+		$stR = [$handle];
+		$stW = null;
+		if (false === stream_select($stR, $stW, $stW, self::TIMEOUT)) {
+			throw new WhoisException('Connection stream select timeout');
+		};
+	}
+	
+	/**
+	 * @return string
+	 * @throws WhoisException
+	 */
+	public function htmlInfo() {
+		return nl2br($this->info());
+	}
 
-                        // Getting string
-                        $string = '';
+	/**
+	 * @return string full domain name
+	 */
+	public function getDomain() {
+		return $this->domain;
+	}
 
-                        while (!feof($fp)) {
-                            $string .= fgets($fp, 128);
-                        }
+	/**
+	 * @return string top level domains separated by dot
+	 */
+	public function getTLDs() {
+		return $this->TLDs;
+	}
 
-                        // Checking for other tld's
-                    } else {
-                        while (!feof($fp)) {
-                            $string .= fgets($fp, 128);
-                        }
-                    }
-                    fclose($fp);
-                }
+	/**
+	 * @return string return subdomain (low level domain)
+	 */
+	public function getSubDomain() {
+		return $this->subDomain;
+	}
 
-                $string_encoding = mb_detect_encoding($string, "UTF-8, ISO-8859-1, ISO-8859-15", true);
-                $string_utf8 = mb_convert_encoding($string, "UTF-8", $string_encoding);
+	/**
+	 * @return bool
+	 * @throws WhoisException
+	 */
+	public function isAvailable() {
+		$notFoundString = $this->servers->getNotFoundString($this->TLDs);
+		if (false === $notFoundString) {
+			throw new WhoisException("Availability check is not implemented for {$this->TLDs}");
+		}
+		$whoisInfo = $this->info();
+		$array = explode(':', $notFoundString);
+		
+		if ('MAXCHARS' === $array[0]) {
+			$domainQuoted = preg_quote($this->domain, '/');
+			$whoisInfoWithoutDomain = preg_replace("/$domainQuoted/", '', $whoisInfo);
+			$maxLen = intval(trim($array[1]));
+			return strlen($whoisInfoWithoutDomain) <= $maxLen;
+		} 
+		
+		$notFoundStringQuoted = preg_quote($notFoundString, '/');
+		$whoisInfo = preg_replace('/\s+/', ' ', $whoisInfo);
+		if (preg_match("/$notFoundStringQuoted/i", $whoisInfo)) {
+			return true;
+		}
+		return false;
+	}
 
-                return htmlspecialchars($string_utf8, ENT_COMPAT, "UTF-8", true);
-            } else {
-                return "No whois server for this tld in list!";
-            }
-        } else {
-            return "Domain name isn't valid!";
-        }
-    }
+	public function isValid() {
+		if (!$this->servers->exists($this->TLDs)) {
+			return false;
+		}
+		$tmp_domain = strtolower($this->subDomain);
+		if (!preg_match('/^[a-z0-9\-]{2,}$/', $tmp_domain)) {
+			return false;
+		}
+		
+		if (preg_match('/^-|-$/', $tmp_domain)) {
+			return false;
+		}
 
-    public function htmlInfo()
-    {
-        return nl2br($this->info());
-    }
-
-    /**
-     * @return string full domain name
-     */
-    public function getDomain()
-    {
-        return $this->domain;
-    }
-
-    /**
-     * @return string top level domains separated by dot
-     */
-    public function getTLDs()
-    {
-        return $this->TLDs;
-    }
-
-    /**
-     * @return string return subdomain (low level domain)
-     */
-    public function getSubDomain()
-    {
-        return $this->subDomain;
-    }
-
-    public function isAvailable()
-    {
-        $whois_string = $this->info();
-        $not_found_string = '';
-        if (isset($this->servers[$this->TLDs][1])) {
-           $not_found_string = $this->servers[$this->TLDs][1];
-        }
-
-        $whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
-        $whois_string = @preg_replace("/\s+/", ' ', $whois_string);
-
-        $array = explode (":", $not_found_string);
-        if ($array[0] == "MAXCHARS") {
-            if (strlen($whois_string2) <= $array[1]) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            if (preg_match("/" . $not_found_string . "/i", $whois_string)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-
-    public function isValid()
-    {
-        if (
-            isset($this->servers[$this->TLDs][0])
-            && strlen($this->servers[$this->TLDs][0]) > 6
-        ) {
-            $tmp_domain = strtolower($this->subDomain);
-            if (
-                preg_match("/^[a-z0-9\-]{3,}$/", $tmp_domain)
-                && !preg_match("/^-|-$/", $tmp_domain) //&& !preg_match("/--/", $tmp_domain)
-            ) {
-                return true;
-            }
-        }
-
-        return false;
-    }
+		return true;
+	}
 }
