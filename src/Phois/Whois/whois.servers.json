@@ -5,35 +5,35 @@
     ],
     "run": [
         "whois.nic.run",
-        "available"
+        "Domain not found."
     ],
     "plus": [
         "whois.nic.plus",
-        "available"
+        "Domain not found."
     ],
     "ai": [
         "whois.nic.ai",
-        "available"
+        "No Object Found"
     ],
     "live": [
         "whois.nic.live",
-        "available"
+        "Domain not found."
     ],
     "vip": [
         "whois.nic.vip",
-        "available"
+        "This domain name has not been registered."
     ],
     "studio": [
         "whois.nic.studio",
-        "available"
+        "Domain not found."
     ],
     "group": [
         "whois.nic.group",
-        "available"
+        "Domain not found."
     ],
     "storage": [
         "whois.nic.storage",
-        "available"
+        "DOMAIN NOT FOUND"
     ],
     "date": [
         "whois.nic.date",
