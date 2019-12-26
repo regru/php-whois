@@ -68,8 +68,8 @@
         "Domain not found."
     ],
     "actor": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.actor",
+        "not found"
     ],
     "ad": [
         "whois.ripe.net",
@@ -120,12 +120,12 @@
         "No information available"
     ],
     "airforce": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.airforce",
+        "not found"
     ],
     "allfinanz": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.allfinanz",
+        "not found"
     ],
     "alsace": [
         "whois-alsace.nic.fr",
@@ -144,8 +144,8 @@
         "No match for"
     ],
     "android": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "apartments": [
         "whois.donuts.co",
@@ -156,12 +156,12 @@
         "Requested Domain cannot be found"
     ],
     "archi": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.afilias.net",
+        "not found"
     ],
     "army": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.army",
+        "not found"
     ],
     "arq.br": [
         "whois.nic.br",
@@ -208,16 +208,16 @@
         "No information available"
     ],
     "attorney": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.attorney",
+        "not found"
     ],
     "au": [
         "whois.audns.net.au",
         "No Data Found"
     ],
     "auction": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.auction",
+        "not found"
     ],
     "audio": [
         "whois.uniregistry.net",
@@ -236,8 +236,8 @@
         "No records matching"
     ],
     "band": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.band",
+        "not found"
     ],
     "bank": [
         "whois.nic.bank",
@@ -300,8 +300,8 @@
         "Domain not found."
     ],
     "bio": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.afilias.net",
+        "not found"
     ],
     "bio.br": [
         "whois.nic.br",
@@ -336,16 +336,16 @@
         "NOT FOUND"
     ],
     "bmw": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.bmw",
+        "not found"
     ],
     "bnpparibas": [
         "whois.afilias-srs.net",
         "NOT FOUND"
     ],
     "boo": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "boutique": [
         "whois.donuts.co",
@@ -368,8 +368,8 @@
         "This domain name has not been registered."
     ],
     "build": [
-        "whois.nic.build ",
-        "No Data Found"
+        "whois.nic.build",
+        "not found"
     ],
     "builders": [
         "whois.donuts.co",
@@ -404,12 +404,12 @@
         "Domain not found"
     ],
     "cal": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "camera": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.camera",
+        "not found"
     ],
     "camp": [
         "whois.donuts.co",
@@ -436,24 +436,24 @@
         "Domain not found."
     ],
     "care": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.care",
+        "not found"
     ],
     "career": [
         "whois.nic.career",
         "No match for"
     ],
     "careers": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.careers",
+        "not found"
     ],
     "casa": [
         "whois.nic.casa",
         "This domain name has not been registered."
     ],
     "cash": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.cash",
+        "not found"
     ],
     "casino": [
         "whois.donuts.co",
@@ -496,8 +496,8 @@
         "not have an entry"
     ],
     "channel": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "chat": [
         "whois.donuts.co",
@@ -512,8 +512,8 @@
         "is available"
     ],
     "chrome": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "church": [
         "whois.donuts.co",
@@ -544,8 +544,8 @@
         "is available for"
     ],
     "clinic": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.clinic",
+        "not found"
     ],
     "clothing": [
         "whois.donuts.co",
@@ -624,12 +624,12 @@
         "No match for"
     ],
     "co.za": [
-        "http:\/\/whois.registry.net.za\/whois\/whois.sh?Domain=",
+        "http://whois.registry.net.za/whois/whois.sh?Domain=",
         "No Matches"
     ],
     "coach": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.coach",
+        "not found"
     ],
     "codes": [
         "whois.donuts.co",
@@ -644,8 +644,8 @@
         "DOMAIN NOT FOUND"
     ],
     "cologne": [
-        "whois-fe1.pdt.cologne.tango.knipp.de",
-        "% no matching objects found"
+        "whois.ryce-rsp.com",
+        "not found"
     ],
     "com": [
         "whois.crsnic.net",
@@ -680,11 +680,11 @@
         "No entries found"
     ],
     "com.gr": [
-        "http:\/\/grwhois.ics.forth.gr:800\/plainwhois\/plainWhois?domainName=",
+        "http://grwhois.ics.forth.gr:800/plainwhois/plainWhois?domainName=",
         "not exist"
     ],
     "com.gt": [
-        "http:\/\/www.gt\/cgi-bin\/whois.cgi?domain=",
+        "http://www.gt/cgi-bin/whois.cgi?domain=",
         "DOMINIO NO REGISTRADO"
     ],
     "com.hk": [
@@ -704,7 +704,7 @@
         "does not exist"
     ],
     "com.ph": [
-        "http:\/\/www2.dot.ph\/WhoIs.asp?Domain=",
+        "http://www2.dot.ph/WhoIs.asp?Domain=",
         "is still available"
     ],
     "com.pl": [
@@ -752,8 +752,8 @@
         "Domain not found"
     ],
     "computer": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.computer",
+        "not found"
     ],
     "condos": [
         "whois.donuts.co",
@@ -764,8 +764,8 @@
         "Domain not found"
     ],
     "consulting": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.consulting",
+        "not found"
     ],
     "contractors": [
         "whois.donuts.co",
@@ -788,8 +788,8 @@
         "is available for registration"
     ],
     "courses": [
-        "whois.aridnrs.net.au",
-        "No Data Found"
+        "whois.nic.courses",
+        "not found"
     ],
     "cq.cn": [
         "whois.cnnic.net.cn",
@@ -817,7 +817,7 @@
     ],
     "cx": [
         "whois.nic.cx",
-        "No match for"
+        "not found"
     ],
     "cymru": [
         "whois.nic.cymru",
@@ -828,12 +828,12 @@
         "No entries found"
     ],
     "dad": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "dance": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.dance",
+        "not found"
     ],
     "dating": [
         "whois.donuts.co",
@@ -844,12 +844,12 @@
         "DOMAIN NOT FOUND"
     ],
     "day": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "dclk": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "de": [
         "whois.denic.de",
@@ -860,36 +860,36 @@
         "Domain not found."
     ],
     "degree": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.degree",
+        "not found"
     ],
     "delivery": [
         "whois.donuts.co",
         "Domain not found."
     ],
     "democrat": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.democrat",
+        "not found"
     ],
     "dental": [
         "whois.donuts.co",
         "Domain not found."
     ],
     "dentist": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.dentist",
+        "not found"
     ],
     "desi": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.desi",
+        "not found"
     ],
     "design": [
         "whois.nic.design",
         "DOMAIN NOT FOUND"
     ],
     "dev": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "diamonds": [
         "whois.donuts.co",
@@ -928,8 +928,8 @@
         "No entries found"
     ],
     "docs": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "domains": [
         "whois.donuts.co",
@@ -944,20 +944,20 @@
         "Available"
     ],
     "dvag": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.dvag",
+        "not found"
     ],
     "dz": [
         "whois.nic.dz",
         "NO OBJECT FOUND!"
     ],
     "eat": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "ec": [
         "whois.nic.ec",
-        "Status: Not Registered"
+        "not found"
     ],
     "ecn.br": [
         "whois.nic.br",
@@ -976,11 +976,11 @@
         "no matching record"
     ],
     "edu.gr": [
-        "http:\/\/grwhois.ics.forth.gr:800\/plainwhois\/plainWhois?domainName=",
+        "http://grwhois.ics.forth.gr:800/plainwhois/plainWhois?domainName=",
         "not exist"
     ],
     "edu.gt": [
-        "http:\/\/www.gt\/cgi-bin\/whois.cgi?domain=",
+        "http://www.gt/cgi-bin/whois.cgi?domain=",
         "DOMINIO NO REGISTRADO"
     ],
     "edu.hk": [
@@ -1032,8 +1032,8 @@
         "% No entries found."
     ],
     "email": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.email",
+        "not found"
     ],
     "emerck": [
         "whois.afilias-srs.net",
@@ -1048,31 +1048,31 @@
         "No match for"
     ],
     "engineer": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.engineer",
+        "not found"
     ],
     "engineering": [
         "whois.donuts.co",
         "Domain not found."
     ],
     "enterprises": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.enterprises",
+        "not found"
     ],
     "epson": [
-        "whois.aridnrs.net.au",
-        "No Data Found"
+        "whois.nic.epson",
+        "not found"
     ],
     "equipment": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.equipment",
+        "not found"
     ],
     "ernet.in": [
         "whois.inregistry.in",
         "NOT FOUND"
     ],
     "es": [
-        "http:\/\/whois.virtualname.es\/whois.php?domain=",
+        "http://whois.virtualname.es/whois.php?domain=",
         "LIBRE"
     ],
     "esp.br": [
@@ -1080,12 +1080,12 @@
         "No match for"
     ],
     "esq": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "estate": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.estate",
+        "not found"
     ],
     "etc.br": [
         "whois.nic.br",
@@ -1112,8 +1112,8 @@
         "% no matching objects found"
     ],
     "eus": [
-        "whois.eus.coreregistry.net",
-        "% no matching objects found"
+        "whois.nic.eus",
+        "not found"
     ],
     "events": [
         "whois.donuts.co",
@@ -1132,8 +1132,8 @@
         "Domain not found"
     ],
     "fail": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.fail",
+        "not found"
     ],
     "fans": [
         "whois.nic.fans",
@@ -1176,8 +1176,8 @@
         "Domain Not Found"
     ],
     "fish": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.fish",
+        "not found"
     ],
     "fishing": [
         "whois.nic.fishing",
@@ -1188,8 +1188,8 @@
         "This domain name has not been registered."
     ],
     "fitness": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.fitness",
+        "not found"
     ],
     "flights": [
         "whois.donuts.co",
@@ -1208,8 +1208,8 @@
         "not found..."
     ],
     "fly": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "fm": [
         "whois.nic.fm",
@@ -1224,24 +1224,24 @@
         "no entries found"
     ],
     "foo": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "football": [
         "whois.donuts.co",
         "Domain not found."
     ],
     "forsale": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.forsale",
+        "not found"
     ],
     "fot.br": [
         "whois.nic.br",
         "No match for"
     ],
     "foundation": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.foundation",
+        "not found"
     ],
     "fr": [
         "whois.nic.fr",
@@ -1252,8 +1252,8 @@
         "is still available"
     ],
     "frogans": [
-        "whois-frogans.nic.fr",
-        "Requested Domain cannot be found"
+        "whois.nic.frogans",
+        "not found"
     ],
     "fst.br": [
         "whois.nic.br",
@@ -1268,16 +1268,16 @@
         "Domain not found."
     ],
     "futbol": [
-        "whois.unitedtld.com",
-        "Domain not found"
+        "whois.nic.futbol",
+        "not found"
     ],
     "g12.br": [
         "whois.nic.br",
         "No match for"
     ],
     "gal": [
-        "whois.gal.coreregistry.net",
-        "% no matching objects found"
+        "whois.nic.gal",
+        "not found"
     ],
     "gallery": [
         "whois.donuts.co",
@@ -1296,12 +1296,12 @@
         "DOMAIN NOT FOUND"
     ],
     "gbiz": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "gd": [
         "whois.nic.gd",
-        "not found..."
+        "not found"
     ],
     "gd.cn": [
         "whois.cnnic.net.cn",
@@ -1348,8 +1348,8 @@
         "Domain not found."
     ],
     "gives": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.gives",
+        "not found"
     ],
     "gl": [
         "whois.nic.gl",
@@ -1360,8 +1360,8 @@
         "Domain not found"
     ],
     "gle": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "global": [
         "whois.nic.global",
@@ -1372,8 +1372,8 @@
         "No match for"
     ],
     "gmail": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "gmina.pl": [
         "whois.dns.pl",
@@ -1400,7 +1400,7 @@
         "No match for"
     ],
     "gob.gt": [
-        "http:\/\/www.gt\/cgi-bin\/whois.cgi?domain=",
+        "http://www.gt/cgi-bin/whois.cgi?domain=",
         "DOMINIO NO REGISTRADO"
     ],
     "gob.mx": [
@@ -1416,12 +1416,12 @@
         "DOMAIN NOT FOUND"
     ],
     "goog": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "google": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "gop": [
         "whois.nic.gop",
@@ -1444,7 +1444,7 @@
         "No match found"
     ],
     "gov.gr": [
-        "http:\/\/grwhois.ics.forth.gr:800\/plainwhois\/plainWhois?domainName=",
+        "http://grwhois.ics.forth.gr:800/plainwhois/plainWhois?domainName=",
         "not exist"
     ],
     "gov.il": [
@@ -1484,7 +1484,7 @@
         "Invalid query or domain name not known"
     ],
     "gr": [
-        "http:\/\/grwhois.ics.forth.gr:800\/plainwhois\/plainWhois?domainName=",
+        "http://grwhois.ics.forth.gr:800/plainwhois/plainWhois?domainName=",
         "not exist"
     ],
     "graphics": [
@@ -1516,16 +1516,16 @@
         "No information available"
     ],
     "guide": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.guide",
+        "not found"
     ],
     "guitars": [
         "whois.uniregistry.net",
         "is available for"
     ],
     "guru": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.guru",
+        "not found"
     ],
     "gv.ac": [
         "whois.nic.ac",
@@ -1552,12 +1552,12 @@
         "% No match"
     ],
     "hangout": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "haus": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.haus",
+        "not found"
     ],
     "hb.cn": [
         "whois.cnnic.net.cn",
@@ -1568,16 +1568,16 @@
         "no matching record"
     ],
     "healthcare": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.healthcare",
+        "not found"
     ],
     "help": [
         "whois.uniregistry.net",
         "is available for"
     ],
     "here": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "hi.cn": [
         "whois.cnnic.net.cn",
@@ -1632,15 +1632,15 @@
         "is available for"
     ],
     "house": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.house",
+        "not found"
     ],
     "how": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "hr": [
-        "http:\/\/dns.hr\/?only_mod_instance=300_612_0&clean_tpl=true&ds_domena=",
+        "http://dns.hr/?only_mod_instance=300_612_0&clean_tpl=true&ds_domena=",
         "nije registrirana"
     ],
     "ht": [
@@ -1688,12 +1688,12 @@
         "Domain not found."
     ],
     "immobilien": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.immobilien",
+        "not found"
     ],
     "in": [
-        "whois.inregistry.in",
-        "NOT FOUND"
+        "whois.registry.in",
+        "not found"
     ],
     "in.rs": [
         "whois.rnids.rs",
@@ -1708,7 +1708,7 @@
         "No match for"
     ],
     "ind.gt": [
-        "http:\/\/www.gt\/cgi-bin\/whois.cgi?domain=",
+        "http://www.gt/cgi-bin/whois.cgi?domain=",
         "DOMINIO NO REGISTRADO"
     ],
     "industries": [
@@ -1740,8 +1740,8 @@
         "No match for"
     ],
     "ing": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "ink": [
         "whois.donuts.co",
@@ -1760,8 +1760,8 @@
         "but this server does not have"
     ],
     "international": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.international",
+        "not found"
     ],
     "investments": [
         "whois.donuts.co",
@@ -1773,7 +1773,7 @@
     ],
     "iq": [
         "whois.cmc.iq",
-        "Domain Status: No Object Found"
+        "not found"
     ],
     "ir": [
         "whois.nic.ir",
@@ -1840,8 +1840,8 @@
         "No match found"
     ],
     "kaufen": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.kaufen",
+        "not found"
     ],
     "kddi": [
         "whois.nic.kddi",
@@ -1861,7 +1861,7 @@
     ],
     "ki": [
         "whois.nic.ki",
-        "Domain Status: No Object Found"
+        "not found"
     ],
     "kiev.ua": [
         "whois.net.ua",
@@ -1872,8 +1872,8 @@
         "NOT FOUND"
     ],
     "kitchen": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.kitchen",
+        "not found"
     ],
     "kiwi": [
         "whois.nic.kiwi",
@@ -1884,16 +1884,16 @@
         "220 Available"
     ],
     "koeln": [
-        "whois-fe1.pdt.koeln.tango.knipp.de",
-        "% no matching objects found"
+        "whois.ryce-rsp.com",
+        "not found"
     ],
     "kr": [
         "whois.kr",
         "is not registered"
     ],
     "krd": [
-        "whois.aridnrs.net.au",
-        "No Data Found"
+        "whois.nic.krd",
+        "not found"
     ],
     "ky": [
         "whois.kyregistry.ky",
@@ -1928,8 +1928,8 @@
         "No Data Found"
     ],
     "lawyer": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.lawyer",
+        "not found"
     ],
     "lc": [
         "whois2.afilias-grs.net",
@@ -1964,8 +1964,8 @@
         "do not have an entry in our database matching your query"
     ],
     "life": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.life",
+        "not found"
     ],
     "lighting": [
         "whois.donuts.co",
@@ -2052,24 +2052,24 @@
         "Domain not found"
     ],
     "management": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.management",
+        "not found"
     ],
     "mango": [
-        "whois.mango.coreregistry.net",
-        "% no matching objects found"
+        "whois.nic.mango",
+        "not found"
     ],
     "maori.nz": [
         "whois.srs.net.nz",
         "220 Available"
     ],
     "market": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.market",
+        "not found"
     ],
     "marketing": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.marketing",
+        "not found"
     ],
     "md": [
         "whois.nic.md",
@@ -2092,20 +2092,20 @@
         "No match found"
     ],
     "media": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.media",
+        "not found"
     ],
     "media.pl": [
         "whois.dns.pl",
         "No information available"
     ],
     "melbourne": [
-        "whois.aridnrs.net.au",
-        "No Data Found"
+        "whois.nic.melbourne",
+        "not found"
     ],
     "meme": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "memorial": [
         "whois.donuts.co",
@@ -2144,7 +2144,7 @@
         "No match found"
     ],
     "mil.gt": [
-        "http:\/\/www.gt\/cgi-bin\/whois.cgi?domain=",
+        "http://www.gt/cgi-bin/whois.cgi?domain=",
         "DOMINIO NO REGISTRADO"
     ],
     "mil.id": [
@@ -2164,8 +2164,8 @@
         "No information available"
     ],
     "mini": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.mini",
+        "not found"
     ],
     "mk": [
         "whois.marnet.mk",
@@ -2192,28 +2192,28 @@
         "NOT FOUND"
     ],
     "moda": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.moda",
+        "not found"
     ],
     "monash": [
         "whois.nic.monash",
         "No Data Found"
     ],
     "money": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.money",
+        "not found"
     ],
     "mortgage": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.mortgage",
+        "not found"
     ],
     "moscow": [
         "whois.nic.moscow",
         "No entries found"
     ],
     "mov": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "ms": [
         "whois.nic.ms",
@@ -2240,12 +2240,12 @@
         "NOT FOUND"
     ],
     "mx": [
-        "whois.nic.mx",
-        "Object_Not_Found"
+        "whois.mx",
+        "not found"
     ],
     "my": [
-        "whois.mynic.net.my",
-        "does not exist in database"
+        "whois.mynic.my",
+        "not found"
     ],
     "mz": [
         "whois.nic.mz",
@@ -2253,15 +2253,15 @@
     ],
     "na": [
         "whois.na-nic.com.na",
-        "Domain Status: No Object Found"
+        "not found"
     ],
     "name": [
         "whois.nic.name",
         "No match"
     ],
     "navy": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.navy",
+        "not found"
     ],
     "nc": [
         "whois.nc",
@@ -2300,11 +2300,11 @@
         "No match found"
     ],
     "net.gr": [
-        "http:\/\/grwhois.ics.forth.gr:800\/plainwhois\/plainWhois?domainName=",
+        "http://grwhois.ics.forth.gr:800/plainwhois/plainWhois?domainName=",
         "not exist"
     ],
     "net.gt": [
-        "http:\/\/www.gt\/cgi-bin\/whois.cgi?domain=",
+        "http://www.gt/cgi-bin/whois.cgi?domain=",
         "DOMINIO NO REGISTRADO"
     ],
     "net.hk": [
@@ -2336,7 +2336,7 @@
         "220 Available"
     ],
     "net.ph": [
-        "http:\/\/www2.dot.ph\/WhoIs.asp?Domain=",
+        "http://www2.dot.ph/WhoIs.asp?Domain=",
         "is still available"
     ],
     "net.pl": [
@@ -2380,16 +2380,16 @@
         "No information available"
     ],
     "network": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.network",
+        "not found"
     ],
     "new": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "nexus": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "nf": [
         "whois.nic.nf",
@@ -2404,7 +2404,7 @@
         "NOT FOUND"
     ],
     "ngo.ph": [
-        "http:\/\/www2.dot.ph\/WhoIs.asp?Domain=",
+        "http://www2.dot.ph/WhoIs.asp?Domain=",
         "is still available"
     ],
     "ngo.za": [
@@ -2556,11 +2556,11 @@
         "No match found"
     ],
     "org.gr": [
-        "http:\/\/grwhois.ics.forth.gr:800\/plainwhois\/plainWhois?domainName=",
+        "http://grwhois.ics.forth.gr:800/plainwhois/plainWhois?domainName=",
         "not exist"
     ],
     "org.gt": [
-        "http:\/\/www.gt\/cgi-bin\/whois.cgi?domain=",
+        "http://www.gt/cgi-bin/whois.cgi?domain=",
         "DOMINIO NO REGISTRADO"
     ],
     "org.hk": [
@@ -2592,7 +2592,7 @@
         "220 Available"
     ],
     "org.ph": [
-        "http:\/\/www2.dot.ph\/WhoIs.asp?Domain=",
+        "http://www2.dot.ph/WhoIs.asp?Domain=",
         "is still available"
     ],
     "org.pl": [
@@ -2636,7 +2636,7 @@
         "No match for"
     ],
     "org.za": [
-        "http:\/\/org.za\/cgi-bin\/rwhois?format=full&domain=",
+        "http://org.za/cgi-bin/rwhois?format=full&domain=",
         "Domain not registered"
     ],
     "organic": [
@@ -2656,8 +2656,8 @@
         "Domain not found."
     ],
     "parts": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.parts",
+        "not found"
     ],
     "pc.pl": [
         "whois.dns.pl",
@@ -2665,14 +2665,14 @@
     ],
     "pe": [
         "kero.yachay.pe",
-        "Status: Not Registered"
+        "not found"
     ],
     "pf": [
         "whois.registry.pf",
         "Domain unknown"
     ],
     "ph": [
-        "http:\/\/www2.dot.ph\/WhoIs.asp?Domain=",
+        "http://www2.dot.ph/WhoIs.asp?Domain=",
         "is still available"
     ],
     "photo": [
@@ -2680,8 +2680,8 @@
         "is available for"
     ],
     "photography": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.photography",
+        "not found"
     ],
     "photos": [
         "whois.donuts.co",
@@ -2728,8 +2728,8 @@
         "No entries found"
     ],
     "pohl": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.pohl",
+        "not found"
     ],
     "poker": [
         "whois.afilias.net",
@@ -2776,16 +2776,16 @@
         "No match for"
     ],
     "prod": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "productions": [
         "whois.donuts.co",
         "Domain not found."
     ],
     "prof": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "properties": [
         "whois.donuts.co",
@@ -2808,8 +2808,8 @@
         "no match"
     ],
     "pub": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.pub",
+        "not found"
     ],
     "pw": [
         "whois.nic.pw",
@@ -2860,16 +2860,16 @@
         "NOT FOUND"
     ],
     "rehab": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.rehab",
+        "not found"
     ],
     "reise": [
         "whois.nic.reise",
         "% No match"
     ],
     "reisen": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.reisen",
+        "not found"
     ],
     "reit": [
         "whois.nic.reit",
@@ -2880,20 +2880,20 @@
         "No information available"
     ],
     "rentals": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.rentals",
+        "not found"
     ],
     "repair": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.repair",
+        "not found"
     ],
     "report": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.report",
+        "not found"
     ],
     "republican": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.republican",
+        "not found"
     ],
     "res.in": [
         "whois.inregistry.in",
@@ -2908,8 +2908,8 @@
         "Domain not found."
     ],
     "reviews": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.reviews",
+        "not found"
     ],
     "rich": [
         "whois.afilias-srs.net",
@@ -2920,16 +2920,16 @@
         "No match for"
     ],
     "rip": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.rip",
+        "not found"
     ],
     "ro": [
         "whois.rotld.ro",
         "No entries found"
     ],
     "rocks": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.rocks",
+        "not found"
     ],
     "rodeo": [
         "whois.nic.rodeo",
@@ -2937,11 +2937,11 @@
     ],
     "rs": [
         "whois.rnids.rs",
-        "%ERROR:103"
+        "not found"
     ],
     "rsvp": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "ru": [
         "whois.ripn.net",
@@ -2960,12 +2960,12 @@
         "DOMAIN NOT FOUND"
     ],
     "saarland": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.saarland",
+        "not found"
     ],
     "sale": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.sale",
+        "not found"
     ],
     "samsung": [
         "whois.nic.samsung",
@@ -2976,16 +2976,16 @@
         "Domain not found."
     ],
     "saxo": [
-        "whois.aridnrs.net.au",
-        "No Data Found"
+        "whois.nic.saxo",
+        "not found"
     ],
     "sb": [
         "whois.nic.net.sb",
         "Domain Status: No Object Found"
     ],
     "sc": [
-        "wawa.eahd.or.ug",
-        "No entries found"
+        "whois2.afilias-grs.net",
+        "not found"
     ],
     "sc.cn": [
         "whois.cnnic.net.cn",
@@ -3020,8 +3020,8 @@
         "Domain not found."
     ],
     "scot": [
-        "whois.scot.coreregistry.net",
-        "% no matching objects found"
+        "whois.nic.scot",
+        "not found"
     ],
     "se": [
         "whois.iis.se",
@@ -3036,8 +3036,8 @@
         "DOMAIN NOT FOUND"
     ],
     "services": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.services",
+        "not found"
     ],
     "sexy": [
         "whois.uniregistry.net",
@@ -3112,16 +3112,16 @@
         "No entries found"
     ],
     "social": [
-        "whois.unitedtld.com",
-        "Domain not found."
+        "whois.nic.social",
+        "not found"
     ],
     "software": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.software",
+        "not found"
     ],
     "solar": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.solar",
+        "not found"
     ],
     "solutions": [
         "whois.donuts.co",
@@ -3132,8 +3132,8 @@
         "No information available"
     ],
     "soy": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "space": [
         "whois.nic.space",
@@ -3160,8 +3160,8 @@
         "No Data Found"
     ],
     "style": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.style",
+        "not found"
     ],
     "su": [
         "whois.ripn.net",
@@ -3224,16 +3224,16 @@
         "is available for registration"
     ],
     "tax": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.tax",
+        "not found"
     ],
     "tc": [
-        "whois.adamsnames.tc",
-        "Available"
+        "whois.nic.tc",
+        "not found"
     ],
     "technology": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.technology",
+        "not found"
     ],
     "tel": [
         "whois.nic.tel",
@@ -3276,12 +3276,12 @@
         "no matching record"
     ],
     "tk": [
-        "https:\/\/partners.nic.tk\/cgi-bin\/whmcs-whois.taloha?d=",
+        "https://partners.nic.tk/cgi-bin/whmcs-whois.taloha?d=",
         "has no matches"
     ],
     "tl": [
         "whois.nic.tl",
-        "Domain Status: No Object Found"
+        "not found"
     ],
     "tm": [
         "whois.nic.tm",
@@ -3313,15 +3313,15 @@
     ],
     "tn": [
         "whois.ati.tn",
-        "NO OBJECT FOUND!"
+        "not found"
     ],
     "to": [
-        "monarch.tonic.to",
-        "No match for"
+        "whois.tonic.to",
+        "not found"
     ],
     "today": [
-        "whois.donuts.co",
-        "Domain not found"
+        "whois.nic.today",
+        "not found"
     ],
     "tools": [
         "whois.donuts.co",
@@ -3344,8 +3344,8 @@
         "Domain not found."
     ],
     "toys": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.toys",
+        "not found"
     ],
     "training": [
         "whois.donuts.co",
@@ -3364,12 +3364,12 @@
         "No Data Found"
     ],
     "tt": [
-        "https:\/\/www.nic.tt\/cgi-bin\/search.pl?name=",
+        "https://www.nic.tt/cgi-bin/search.pl?name=",
         "is available"
     ],
     "tui": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.tui",
+        "not found"
     ],
     "tur.br": [
         "whois.nic.br",
@@ -3428,8 +3428,8 @@
         "Domain not found."
     ],
     "uno": [
-        "whois.uno.nic",
-        "Not found"
+        "whois.nic.uno",
+        "not found"
     ],
     "uol": [
         "whois.gtlds.nic.br",
@@ -3445,7 +3445,7 @@
     ],
     "uy": [
         "whois.nic.org.uy",
-        "No match for"
+        "not found"
     ],
     "uy.com": [
         "whois.centralnic.com",
@@ -3465,7 +3465,7 @@
     ],
     "ve": [
         "whois.nic.ve",
-        "No match for"
+        "not found"
     ],
     "vegas": [
         "whois.afilias-srs.net",
@@ -3480,8 +3480,8 @@
         "% No match"
     ],
     "vet": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.vet",
+        "not found"
     ],
     "vet.br": [
         "whois.nic.br",
@@ -3496,16 +3496,16 @@
         "Domain not found"
     ],
     "video": [
-        "whois.rightside.co",
-        "Domain not found."
+        "whois.nic.video",
+        "not found"
     ],
     "villas": [
         "whois.donuts.co",
         "Domain not found."
     ],
     "vision": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.vision",
+        "not found"
     ],
     "vlaanderen": [
         "whois.nic.vlaanderen",
@@ -3608,8 +3608,8 @@
         "No Data Found"
     ],
     "wtf": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.wtf",
+        "not found"
     ],
     "www.ro": [
         "whois.rotld.ro",
@@ -3808,12 +3808,12 @@
         "Domain not found."
     ],
     "xn--vermgensberater-ctb": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.xn--vermgensberater-ctb",
+        "not found"
     ],
     "xn--vermgensberatung-pwb": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.xn--vermgensberatung-pwb",
+        "not found"
     ],
     "xn--vhquv": [
         "whois.donuts.co",
@@ -3864,8 +3864,8 @@
         "This domain name has not been registered."
     ],
     "youtube": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "yt": [
         "whois.nic.yt",
@@ -3876,16 +3876,16 @@
         "DOMAIN NOT FOUND"
     ],
     "za.net": [
-        "http:\/\/www.za.net\/cgi-bin\/whois.cgi?domain=",
+        "http://www.za.net/cgi-bin/whois.cgi?domain=",
         "No such domain"
     ],
     "za.org": [
-        "http:\/\/www.za.net\/cgi-bin\/whois.cgi?domain=",
+        "http://www.za.net/cgi-bin/whois.cgi?domain=",
         "No such domain"
     ],
     "zip": [
-        "domain-registry-whois.l.google.com",
-        "Domain not found."
+        "whois.nic.google",
+        "not found"
     ],
     "zj.cn": [
         "whois.cnnic.net.cn",
@@ -3900,11 +3900,11 @@
         "Domain Status: No Object Found"
     ],
     "zone": [
-        "whois.donuts.co",
-        "Domain not found."
+        "whois.nic.zone",
+        "not found"
     ],
     "zuerich": [
-        "whois.ksregistry.net",
-        "not found..."
+        "whois.nic.zuerich",
+        "not found"
     ]
 }
