@@ -1,8 +1,10 @@
 <?php
 
 include '../src/Phois/Whois/Whois.php';
+include '../src/Phois/Whois/WhoisServers.php';
+include '../src/Phois/Whois/WhoisException.php';
 
-$sld = 'reg.ru';
+$sld = 'test.saarland';
 
 $domain = new Phois\Whois\Whois($sld);
 
