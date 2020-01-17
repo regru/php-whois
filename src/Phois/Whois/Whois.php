@@ -132,7 +132,7 @@ class Whois {
 			$newServer = trim($lineArr[1]);
 			if (strlen($newServer) > 0 && $newServer !== $whoisServer) {
 				try {
-					$string = $this->getWithSocket($newServer);
+					return $this->getWithSocket($newServer);
 				} catch (WhoisException $exception) {
 					return $string;
 				}
