@@ -4,16 +4,18 @@ include '../src/Phois/Whois/Whois.php';
 include '../src/Phois/Whois/WhoisServers.php';
 include '../src/Phois/Whois/WhoisException.php';
 
-$sld = 'test.saarland';
+$slds = ['ero-massaj.com', 'cerus-group.com', 'test.com', 'google.com', 'vk.com', 'habr.com', 'montessori.place'];
 
-$domain = new Phois\Whois\Whois($sld);
+foreach ($slds as $sld) {
+	echo $sld, PHP_EOL, PHP_EOL;
+	$domain = new Phois\Whois\Whois($sld);
 
-$whois_answer = $domain->info();
+	$whois_answer = $domain->info();
+	echo $whois_answer;
 
-echo $whois_answer;
-
-if ($domain->isAvailable()) {
-    echo "Domain is available\n";
-} else {
-    echo "Domain is registered\n";
+	if ($domain->isAvailable()) {
+		echo "Domain is available\n";
+	} else {
+		echo "Domain is registered\n";
+	}
 }
