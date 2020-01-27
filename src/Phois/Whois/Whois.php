@@ -131,7 +131,11 @@ class Whois {
 			if (false === strpos(strtolower($lineArr[0]),  'whois server')) continue;
 			$newServer = trim($lineArr[1]);
 			if (strlen($newServer) > 0 && $newServer !== $whoisServer) {
-				return $this->getWithSocket($newServer);
+				try {
+					return $this->getWithSocket($newServer);
+				} catch (WhoisException $exception) {
+					return $string;
+				}
 			}
 		}
 		return $string;
