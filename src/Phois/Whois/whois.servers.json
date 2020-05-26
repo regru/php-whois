@@ -28,7 +28,7 @@
         "No data was found"
     ],
     "ac.in": [
-        "whois.inregistry.in",
+        "whois.registry.in",
         "NOT FOUND"
     ],
     "ac.jp": [
@@ -460,8 +460,8 @@
         "Domain not found."
     ],
     "cat": [
-        "whois.cat",
-        "NOT FOUND"
+        "whois.nic.cat",
+        "not found"
     ],
     "catering": [
         "whois.donuts.co",
@@ -588,7 +588,7 @@
         "No data was found"
     ],
     "co.in": [
-        "whois.inregistry.in",
+        "whois.registry.in",
         "NOT FOUND"
     ],
     "co.jp": [
@@ -949,7 +949,7 @@
     ],
     "dz": [
         "whois.nic.dz",
-        "NO OBJECT FOUND!"
+        "not found"
     ],
     "eat": [
         "whois.nic.google",
@@ -1068,7 +1068,7 @@
         "not found"
     ],
     "ernet.in": [
-        "whois.inregistry.in",
+        "whois.registry.in",
         "NOT FOUND"
     ],
     "es": [
@@ -1452,7 +1452,7 @@
         "No data was found"
     ],
     "gov.in": [
-        "whois.inregistry.in",
+        "whois.registry.in",
         "NOT FOUND"
     ],
     "gov.mm": [
@@ -1625,7 +1625,7 @@
     ],
     "host": [
         "whois.nic.host",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "hosting": [
         "whois.uniregistry.net",
@@ -2316,7 +2316,7 @@
         "No data was found"
     ],
     "net.in": [
-        "whois.inregistry.in",
+        "whois.registry.in",
         "NOT FOUND"
     ],
     "net.mm": [
@@ -2513,7 +2513,7 @@
     ],
     "ooo": [
         "whois.nic.ooo",
-        "No match for"
+        "not found"
     ],
     "or.ac": [
         "whois.nic.ac",
@@ -2572,7 +2572,7 @@
         "No data was found"
     ],
     "org.in": [
-        "whois.inregistry.in",
+        "whois.registry.in",
         "NOT FOUND"
     ],
     "org.mm": [
@@ -2757,7 +2757,7 @@
     ],
     "press": [
         "whois.nic.press",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "presse.fr": [
         "whois.nic.fr",
@@ -2813,7 +2813,7 @@
     ],
     "pw": [
         "whois.nic.pw",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "qa": [
         "whois.registry.qa",
@@ -2873,7 +2873,7 @@
     ],
     "reit": [
         "whois.nic.reit",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "rel.pl": [
         "whois.dns.pl",
@@ -2896,12 +2896,12 @@
         "not found"
     ],
     "res.in": [
-        "whois.inregistry.in",
+        "whois.registry.in",
         "NOT FOUND"
     ],
     "rest": [
-        "whois.centralnic.com",
-        "DOMAIN NOT FOUND"
+        "whois.nic.rest",
+        "not found"
     ],
     "restaurant": [
         "whois.donuts.co",
@@ -2981,7 +2981,7 @@
     ],
     "sb": [
         "whois.nic.net.sb",
-        "Domain Status: No Object Found"
+        "not found"
     ],
     "sc": [
         "whois2.afilias-grs.net",
@@ -3137,7 +3137,7 @@
     ],
     "space": [
         "whois.nic.space",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "spb.ru": [
         "whois.nic.ru",
@@ -3557,7 +3557,7 @@
     ],
     "website": [
         "whois.nic.website",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "wed": [
         "whois.nic.wed",
@@ -3581,11 +3581,11 @@
     ],
     "wiki": [
         "whois.nic.wiki",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "wme": [
         "whois.nic.wme",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "work": [
         "whois.nic.work",
@@ -3845,7 +3845,7 @@
     ],
     "xyz": [
         "whois.nic.xyz",
-        "DOMAIN NOT FOUND"
+        "not found"
     ],
     "xz.cn": [
         "whois.cnnic.net.cn",
