@@ -76,7 +76,7 @@ class Whois
                         return "Whois server not exist error!";
                     }
                     // Getting whois information
-                    $fp = fsockopen($whois_server, 43);
+                    $fp = fsockopen($whois_server, 43, $errno, $errstr, 20);
                     if (!$fp) {
                         return "Connection error!";
                     }
