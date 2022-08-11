@@ -1,4 +1,4 @@
-# php-whois
+# php-whois (UNMAINTAINED)
 
 PHP class to retrieve WHOIS information.
 
