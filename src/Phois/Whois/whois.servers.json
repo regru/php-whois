@@ -1,4 +1,64 @@
 {
+    "app": [
+        "whois.nic.google",
+        "Domain not found."
+    ],
+    "run": [
+        "whois.nic.run",
+        "Domain not found."
+    ],
+    "plus": [
+        "whois.nic.plus",
+        "Domain not found."
+    ],
+    "ai": [
+        "whois.nic.ai",
+        "No Object Found"
+    ],
+    "live": [
+        "whois.nic.live",
+        "Domain not found."
+    ],
+    "vip": [
+        "whois.nic.vip",
+        "This domain name has not been registered."
+    ],
+    "studio": [
+        "whois.nic.studio",
+        "Domain not found."
+    ],
+    "group": [
+        "whois.nic.group",
+        "Domain not found."
+    ],
+    "storage": [
+        "whois.nic.storage",
+        "DOMAIN NOT FOUND"
+    ],
+    "date": [
+        "whois.nic.date",
+        "No Data Found"
+    ],
+    "ist": [
+        "whois.afilias-srs.net",
+        "NOT FOUND"
+    ],
+    "fan": [
+        "whois.nic.fan",
+        "Domain not found."
+    ],
+    "film": [
+        "whois.nic.film",
+        "No Data Found"
+    ],
+    "cloud": [
+        "whois.nic.cloud",
+        "No Data Found"
+    ],
+    "shop": [
+        "whois.nic.shop",
+        "The queried object does not exist: DOMAIN NOT FOUND"
+    ],
     "abogado": [
         "whois-dub.mm-registry.com",
         "is available for registration"
