@@ -15,7 +15,7 @@ class Whois
     /**
      * @param string $domain full domain name (without trailing dot)
      */
-    public function __construct($domain)
+    public function __construct($domain, $proxy = false)
     {
         $this->domain = $domain;
         // check $domain syntax and split full domain name on subdomain and TLDs
@@ -25,6 +25,9 @@ class Whois
         ) {
             $this->subDomain = $matches[1];
             $this->TLDs = $matches[2];
+            if ($proxy) {
+                $this->proxy = $proxy;
+            }
         } else
             throw new \InvalidArgumentException("Invalid $domain syntax");
         // setup whois servers array from json file
@@ -39,7 +42,7 @@ class Whois
             // If TLDs have been found
             if ($whois_server != '') {
 
-                // if whois server serve replay over HTTP protocol instead of WHOIS protocol
+                // if whois server serve reply over HTTP protocol instead of WHOIS protocol
                 if (preg_match("/^https?:\/\//i", $whois_server)) {
 
                     // curl session to get whois reposnse
@@ -52,6 +55,11 @@ class Whois
                     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
+                    if ($proxy) {
+                        curl_setopt($ch, CURLOPT_PROXY, $proxy['ip']);
+                        curl_setopt($ch, CURLOPT_PROXYPORT, $proxy['port']);
+                    }
+
                     $data = curl_exec($ch);
 
                     if (curl_error($ch)) {
@@ -63,8 +71,12 @@ class Whois
 
                 } else {
 
+                    // check whois server exist
+                    if (gethostbyname($whois_server) == $whois_server) {
+                        return "Whois server not exist error!";
+                    }
                     // Getting whois information
-                    $fp = fsockopen($whois_server, 43);
+                    $fp = fsockopen($whois_server, 43, $errno, $errstr, 20);
                     if (!$fp) {
                         return "Connection error!";
                     }
@@ -154,32 +166,45 @@ class Whois
         return $this->subDomain;
     }
 
-    public function isAvailable()
-    {
-        $whois_string = $this->info();
-        $not_found_string = '';
-        if (isset($this->servers[$this->TLDs][1])) {
-           $not_found_string = $this->servers[$this->TLDs][1];
-        }
+	public function isAvailable()
+	{
+		$whois_string = $this->info();
+		$not_found_string = '';
+		if (isset($this->servers[$this->TLDs][1])) {
+			$not_found_strings = array_slice($this->servers[$this->TLDs], 1);
+		}
 
-        $whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
-        $whois_string = @preg_replace("/\s+/", ' ', $whois_string);
+		$whois_string2 = @preg_replace('/' . $this->domain . '/', '', $whois_string);
+		$whois_string = @preg_replace("/\s+/", ' ', $whois_string);
 
-        $array = explode (":", $not_found_string);
-        if ($array[0] == "MAXCHARS") {
-            if (strlen($whois_string2) <= $array[1]) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            if (preg_match("/" . $not_found_string . "/i", $whois_string)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
+		$return = true;
+
+		if (is_array($not_found_strings)) {
+			foreach ($not_found_strings as $not_found_string) {
+				$array = explode (":", $not_found_string);
+				if ($array[0] == "MAXCHARS") {
+					if (strlen($whois_string2) <= $array[1]) {
+						$return &= true;
+					} else {
+						$return &= false;
+					}
+				} else if ($array[0] == "NEGATION") {
+					if (preg_match("/" . $array[1] . "/i", $whois_string)) {
+						$return &= false;
+					} else {
+						$return &= true;
+					}
+				} else {
+					if (preg_match("/" . $not_found_string . "/i", $whois_string)) {
+						$return &= true;
+					} else {
+						$return &= false;
+					}
+				}
+			}
+		}
+		return $return;
+	}
 
     public function isValid()
     {
@@ -198,4 +223,9 @@ class Whois
 
         return false;
     }
+
+	public function isServerDefined() {
+		return isset($this->servers[$this->TLDs]);
+	}
+
 }
