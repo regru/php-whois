@@ -42,7 +42,7 @@ class Whois
                 // if whois server serve replay over HTTP protocol instead of WHOIS protocol
                 if (preg_match("/^https?:\/\//i", $whois_server)) {
 
-                    // curl session to get whois reposnse
+                    // curl session to get whois response
                     $ch = curl_init();
                     $url = $whois_server . $this->subDomain . '.' . $this->TLDs;
                     curl_setopt($ch, CURLOPT_URL, $url);
