@@ -32,16 +32,16 @@
         "NOT FOUND"
     ],
     "ac.jp": [
-        "whois.nic.ad.jp",
+        "whois.jprs.jp",
         "No match!!"
     ],
     "ac.ke": [
         "whois.kenic.or.ke",
-        "Not Registered"
+        "No Object Found"
     ],
     "ac.kr": [
         "whois.nic.or.kr",
-        "is not registered"
+        "domain was not found"
     ],
     "ac.nz": [
         "whois.srs.net.nz",
@@ -54,10 +54,6 @@
     "ac.uk": [
         "whois.ja.net",
         "Sorry - no"
-    ],
-    "ac.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "academy": [
         "whois.donuts.co",
@@ -130,10 +126,6 @@
     "alsace": [
         "whois-alsace.nic.fr",
         "Requested Domain cannot be found"
-    ],
-    "alt.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "am": [
         "whois.nic.am",
@@ -577,7 +569,7 @@
     ],
     "co.ac": [
         "whois.nic.ac",
-        "Available"
+        "not registered"
     ],
     "co.at": [
         "whois.nic.at",
@@ -592,7 +584,7 @@
         "NOT FOUND"
     ],
     "co.jp": [
-        "whois.nic.ad.jp",
+        "whois.jprs.jp",
         "No match!!"
     ],
     "co.ke": [
@@ -601,7 +593,7 @@
     ],
     "co.kr": [
         "whois.nic.or.kr",
-        "is not registered"
+        "domain was not found"
     ],
     "co.nz": [
         "whois.srs.net.nz",
@@ -737,7 +729,7 @@
     ],
     "com.ua": [
         "whois.net.ua",
-        "No entries found"
+        "no object found"
     ],
     "com.ve": [
         "whois.nic.ve",
@@ -925,7 +917,7 @@
     ],
     "dn.ua": [
         "whois.net.ua",
-        "No entries found"
+        "No match record found"
     ],
     "docs": [
         "domain-registry-whois.l.google.com",
@@ -971,10 +963,6 @@
         "whois.aunic.net",
         "No Data Found"
     ],
-    "edu.cn": [
-        "whois.cnnic.net.cn",
-        "no matching record"
-    ],
     "edu.gr": [
         "http:\/\/grwhois.ics.forth.gr:800\/plainwhois\/plainWhois?domainName=",
         "not exist"
@@ -1018,10 +1006,6 @@
     "edu.tr": [
         "whois.metu.edu.tr",
         "No match found"
-    ],
-    "edu.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "education": [
         "whois.donuts.co",
@@ -1388,12 +1372,12 @@
         "Not found"
     ],
     "go.jp": [
-        "whois.nic.ad.jp",
+        "whois.jprs.jp",
         "No match!!"
     ],
     "go.kr": [
         "whois.nic.or.kr",
-        "is not registered"
+        "domain was not found"
     ],
     "go.th": [
         "whois.thnic.net",
@@ -1459,10 +1443,6 @@
         "whois.nic.mm",
         "No domains matched"
     ],
-    "gov.mx": [
-        "whois.nic.mx",
-        "Object_Not_Found"
-    ],
     "gov.my": [
         "whois.mynic.net.my",
         "does not exist"
@@ -1474,10 +1454,6 @@
     "gov.tr": [
         "whois.metu.edu.tr",
         "No match found"
-    ],
-    "gov.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "gq": [
         "whois.dominio.gq",
@@ -1857,7 +1833,7 @@
     ],
     "kh.ua": [
         "whois.net.ua",
-        "No entries found"
+        "No match record found"
     ],
     "ki": [
         "whois.nic.ki",
@@ -1865,7 +1841,7 @@
     ],
     "kiev.ua": [
         "whois.net.ua",
-        "No entries found"
+        "no object found"
     ],
     "kim": [
         "whois.afilias.net",
@@ -1953,7 +1929,7 @@
     ],
     "lg.ua": [
         "whois.net.ua",
-        "No entries found"
+        "No match record found"
     ],
     "lgbt": [
         "whois.afilias.net",
@@ -2029,7 +2005,7 @@
     ],
     "lviv.ua": [
         "whois.net.ua",
-        "No entries found"
+        "no object found"
     ],
     "ly": [
         "whois.nic.ly",
@@ -2155,14 +2131,6 @@
         "whois.dns.pl",
         "No information available"
     ],
-    "mil.tr": [
-        "whois.metu.edu.tr",
-        "No match found"
-    ],
-    "mil.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "mini": [
         "whois.ksregistry.net",
         "not found..."
@@ -2268,12 +2236,12 @@
         "No entries found"
     ],
     "ne.jp": [
-        "whois.nic.ad.jp",
+        "whois.jprs.jp",
         "No match!!"
     ],
     "ne.kr": [
         "whois.nic.or.kr",
-        "is not registered"
+        "domain was not found"
     ],
     "net": [
         "whois.crsnic.net",
@@ -2365,7 +2333,7 @@
     ],
     "net.ua": [
         "whois.net.ua",
-        "No entries found"
+        "no object found"
     ],
     "net.uk": [
         "whois.nic.uk",
@@ -2374,10 +2342,6 @@
     "net.ve": [
         "whois.nic.ve",
         "No match for"
-    ],
-    "net.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "network": [
         "whois.donuts.co",
@@ -2407,10 +2371,6 @@
         "http:\/\/www2.dot.ph\/WhoIs.asp?Domain=",
         "is still available"
     ],
-    "ngo.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "nico": [
         "whois.nic.nico",
         "DOMAIN NOT FOUND"
@@ -2433,7 +2393,7 @@
     ],
     "nm.kr": [
         "whois.nic.or.kr",
-        "is not registered"
+        "domain was not found"
     ],
     "no": [
         "whois.norid.no",
@@ -2458,10 +2418,6 @@
     "nom.ro": [
         "whois.rotld.ro",
         "No entries found"
-    ],
-    "nom.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "nra": [
         "whois.afilias-srs.net",
@@ -2524,12 +2480,12 @@
         "nothing found"
     ],
     "or.jp": [
-        "whois.nic.ad.jp",
+        "whois.jprs.jp",
         "No match!!"
     ],
     "or.kr": [
         "whois.nic.or.kr",
-        "is not registered"
+        "domain was not found"
     ],
     "or.th": [
         "whois.thnic.net",
@@ -2837,7 +2793,7 @@
     ],
     "re.kr": [
         "whois.nic.or.kr",
-        "is not registered"
+        "domain was not found"
     ],
     "realestate.pl": [
         "whois.dns.pl",
@@ -3010,10 +2966,6 @@
     "school.nz": [
         "whois.srs.net.nz",
         "220 Available"
-    ],
-    "school.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "schule": [
         "whois.donuts.co",
@@ -3303,10 +3255,6 @@
         "whois.rotld.ro",
         "No entries found"
     ],
-    "tm.za": [
-        "whois.co.za",
-        "No information available"
-    ],
     "tmp.br": [
         "whois.nic.br",
         "No match for"
@@ -3550,10 +3498,6 @@
     "web.ve": [
         "whois.nic.ve",
         "No match for"
-    ],
-    "web.za": [
-        "whois.co.za",
-        "No information available"
     ],
     "website": [
         "whois.nic.website",
