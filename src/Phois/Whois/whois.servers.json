@@ -128,8 +128,8 @@
         "not found"
     ],
     "alsace": [
-        "whois-alsace.nic.fr",
-        "Requested Domain cannot be found"
+        "whois.nic.alsace",
+        "not found"
     ],
     "alt.za": [
         "whois.co.za",
@@ -152,8 +152,8 @@
         "Domain not found."
     ],
     "aquarelle": [
-        "whois-aquarelle.nic.fr",
-        "Requested Domain cannot be found"
+        "whois.nic.aquarelle",
+        "not found"
     ],
     "archi": [
         "whois.afilias.net",
@@ -381,7 +381,7 @@
     ],
     "bw": [
         "whois.nic.net.bw",
-        "Domain Status: No Object Found"
+        "not found"
     ],
     "by": [
         "whois.cctld.by",
@@ -392,12 +392,12 @@
         "NOT FOUND"
     ],
     "bzh": [
-        "whois-bzh.nic.fr",
-        "Requested Domain cannot be found"
+        "whois.nic.bzh",
+        "not found"
     ],
     "ca": [
         "whois.cira.ca",
-        "Domain status: available"
+        "not found"
     ],
     "cab": [
         "whois.donuts.co",
@@ -1337,7 +1337,7 @@
     ],
     "gi": [
         "whois2.afilias-grs.net",
-        "NOT FOUND"
+        "not found"
     ],
     "gift": [
         "whois.uniregistry.net",
@@ -1660,8 +1660,8 @@
         "No Data Found"
     ],
     "id": [
-        "whois.pandi.or.id",
-        "DOMAIN NOT FOUND"
+        "whois.id",
+        "not found"
     ],
     "id.au": [
         "whois.aunic.net",
@@ -1877,7 +1877,7 @@
     ],
     "kiwi": [
         "whois.nic.kiwi",
-        "is available for registration"
+        "not found"
     ],
     "kiwi.nz": [
         "whois.srs.net.nz",
@@ -1940,8 +1940,8 @@
         "Domain not found."
     ],
     "leclerc": [
-        "whois-leclerc.nic.fr",
-        "Requested Domain cannot be found"
+        "whois.nic.leclerc",
+        "not found"
     ],
     "legal": [
         "whois.donuts.co",
@@ -2172,8 +2172,8 @@
         "% No entries found."
     ],
     "ml": [
-        "whois.dot.ml",
-        "Invalid query or domain name not known"
+        "whois.nic.ml",
+        "not found"
     ],
     "mn": [
         "whois.afilias-grs.info",
@@ -2188,8 +2188,8 @@
         "no matching record"
     ],
     "mobi": [
-        "whois.dotmobiregistry.net",
-        "NOT FOUND"
+        "whois.nic.mobi",
+        "not found"
     ],
     "moda": [
         "whois.nic.moda",
@@ -2217,7 +2217,7 @@
     ],
     "ms": [
         "whois.nic.ms",
-        "No Object Found"
+        "not found"
     ],
     "msk.ru": [
         "whois.nic.ru",
@@ -2265,7 +2265,7 @@
     ],
     "nc": [
         "whois.nc",
-        "No entries found"
+        "not found"
     ],
     "ne.jp": [
         "whois.nic.ad.jp",
@@ -2480,7 +2480,7 @@
         "No match for"
     ],
     "nu": [
-        "whois.nic.nu",
+        "whois.iis.nu",
         "not found"
     ],
     "nx.cn": [
@@ -2644,12 +2644,12 @@
         "NOT FOUND"
     ],
     "ovh": [
-        "whois-ovh.nic.fr",
-        "Requested Domain cannot be found"
+        "whois.nic.ovh",
+        "not found"
     ],
     "paris": [
-        "whois-paris.nic.fr",
-        "Requested Domain cannot be found"
+        "whois.nic.paris",
+        "not found"
     ],
     "partners": [
         "whois.donuts.co",
@@ -2768,8 +2768,8 @@
         "No information available"
     ],
     "pro": [
-        "whois.registrypro.pro",
-        "NOT FOUND"
+        "whois.nic.pro",
+        "not found"
     ],
     "pro.br": [
         "whois.nic.br",
@@ -2805,7 +2805,7 @@
     ],
     "pt": [
         "whois.dns.pt",
-        "no match"
+        "not found"
     ],
     "pub": [
         "whois.nic.pub",
@@ -2953,7 +2953,7 @@
     ],
     "sa": [
         "whois.nic.net.sa",
-        "No Match"
+        "not found"
     ],
     "sa.com": [
         "whois.centralnic.com",
@@ -3044,8 +3044,8 @@
         "is available for registration"
     ],
     "sg": [
-        "whois.nic.net.sg",
-        "Domain Not Found"
+        "whois.sgnic.sg",
+        "not found"
     ],
     "sh": [
         "whois.nic.sh",
@@ -3397,11 +3397,11 @@
     ],
     "tz": [
         "whois.tznic.or.tz",
-        "% No entries found."
+        "not found"
     ],
     "ua": [
-        "whois.net.ua",
-        "No entries found"
+        "whois.ua",
+        "not found"
     ],
     "ug": [
         "whois.co.ug",
@@ -3461,7 +3461,7 @@
     ],
     "vc": [
         "whois2.afilias-grs.net",
-        "NOT FOUND"
+        "not found"
     ],
     "ve": [
         "whois.nic.ve",
@@ -3520,8 +3520,8 @@
         "NOT FOUND"
     ],
     "voting": [
-        "whois.voting.tld-box.at",
-        "% No match"
+        "whois.nic.voting",
+        "not found"
     ],
     "voto": [
         "whois.afilias.net",
